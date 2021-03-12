@@ -1,0 +1,76 @@
+ls -l
+ls /bin
+ls /usr
+ls /etc
+ls /usr/include c
+
+2)grep "printf" /usr/include/stdio.h |less
+
+3)mkdir abc
+cd abc
+touch x
+touch y
+touch t1
+touch t2
+touch t3
+mkdir t
+cd t
+touch a
+touch b
+cd ~
+mkdir zz
+cd zz
+touch x
+cd ~
+mkdir tt
+
+4)$ cp -r ~/abc* ~/zz
+
+5)cp -r -n ~/abc/. ~/zz
+
+6)cp -r ~/abc/t1 ~/abc/t2 ~/tt
+
+7)mkdir test
+chmod r test
+cd test
+touch x
+il pot accesa dar nu pot lista elemente
+ls: cannot open directory .: Permission denied
+
+mkdir test
+chmod x test
+cd test
+touch x
+nu pot schimba directorul pe test
+-bash: cd: test: Permission denied
+
+8) chmod a+r abc
+chmod a+r abc/t
+cd abc
+cd t
+touch x
+
+9)ls -l t
+ls -l t1
+ls -l t2
+ls -l t3
+
+cd t
+ls -ld 
+
+10)cp /dev/zero /dev/null
+ctrl+z
+bg
+ps
+fg
+ctrl+c
+kill -9 id
+
+11)cd tt
+ln -s ~/abc c
+
+12) touch textifle
+echo 'ls,cd,mkdir,touch,cp,chmod,ls -l,ls -ld, ln -s' >textfile
+while read line; do echo $line;done<textfile
+                                                                                                                                                         le
+

@@ -1,0 +1,30 @@
+Nume:Kohan Alexandru
+Grupa:821
+
+1.Care este diferenta dintre JA si JG daca este una?(usoara)
+
+2.Cum trebuie sa fie setat direction flag-ul pentru a parcurge sirul de la dreapta la stanga si ce intrusctiune folosim pentru a-l seta?(usoara)
+
+3.Este corecta urmatoarea sceventa pentru adunarea a doua quad-worduri?(medie)
+add edx,eax
+add ecx,ebx
+
+4.Care este directiva de definire a constantelor?(grea)
+
+5. a - doubleword, scrieti doar secventa de cod care calculeaza 110010b/a.
+Precizati si unde se salveaza rezultatul. fara semn. (medie)
+
+6.Care este diferenta dintre instructiunea SAR si SHR, ca si instruciuni care lucreaza cu biti?(usoara)
+
+7. Daca in data segment avem X ca sir iar X este definit:  
+X dq 0210ah, 000341deh, cum calculam corect lungimea sirului X? Si cum arata sirul X in memorie? (grea) 
+
+8. a/b, a quadword, b byte, scrieti doar secventa de cod care calculeaza a/b. Precizati si unde se salveaza rezultatul. Cu semn.(medie)
+
+9.Scrieti secventa care calculeaza  (-3) * (-129). Care este rezultatul in binar si unde este salvat?(grea)
+
+10. x word, scrieti doar secventa de cod care calculeaza x + 28BCh. Precizati si unde se salveaza rezultatul. Cu semn. (medie)
+
+11. Daca al = 0101 0100b si se aplica instruciunea ROL al, 5 Care va fi noua valoare din al? (medie)
+
+12. al=00000000b. Faceti ca in al sa avem urmatorii biti al=01100100b folosind doar instructiuni de rotire.(medie)

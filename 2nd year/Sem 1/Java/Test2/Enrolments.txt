@@ -1,0 +1,4 @@
+3
+0;0;alex;ion;19
+1;1;alex;ion;19
+2;0;lica;pintea;20

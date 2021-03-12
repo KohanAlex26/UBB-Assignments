@@ -1,0 +1,288 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Cambria Math;}{\f2\fnil\fcharset0 Cambria Math;}{\f3\fnil\fcharset161 Cambria Math;}{\f4\fnil Cambria Math;}{\f5\fnil\fcharset161 Calibri;}}
+{\*\generator Riched20 10.0.18362}{\*\mmathPr\mmathFont1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs40\lang9 Problem statement + Justification:\fs22\par
+There is a market. Clients come to buy things. Everytime a client comes he recieves a random number. This number is compared to others number(who are already in priority queue) by a relation which is given. The relation can be "<" or ">". With this relation we know who has priority to buy . The owner of the market calls the number with the highest priority(if the relation is "<" the smallest number, if the relation is ">" the largest number) out of all the numbers taken at that moment. The person with that number can do his buyings.Then he calls another number.\par
+It is a good problem for priority queue because as soon as someone comes to the store we place him somewhere based on the priority he recieves. We use a priority queue and not a queue because in a queue if someone comes he will do his buyings based on how early he reached the store and not based on the random number he recieves.\par
+\par
+\par
+\par
+\fs40 Interface:\fs22\par
+The domain of the ADT Priority Queue:\par
+PQ = \{pq|pq is a priority queue with elements (e, p), e \f1\u8712?\f0\par
+TElem, p \f1\u8712?\f0  TPriority\}\par
+The interface of the ADT Priority Queue contains the\par
+following operations:\par
+\par
+init (pq, R)\par
+Description: creates a new empty priority queue\par
+Pre: R is a relation over the priorities,\par
+R : TPriority \'d7 TPriority\par
+Post: pq \f1\u8712?\f0  PQ, pq is an empty priority queue\par
+\lang1033\par
+destroy(pq)\par
+Description: destroys a priority queue\par
+Pre: pq \f1\u8712?\f0  PQ\par
+Post: pq was destroyed\par
+\f2\lang1033\par
+\f0\par
+push(pq, e, p)\par
+Description: pushes (adds) a new element to the priority\par
+queue\par
+Pre: pq \f1\u8712?\f0  PQ, e \f1\u8712?\f0  TElem, p \f1\u8712?\f0  TPriority\par
+Post: pq0 \f1\u8712?\f0  PQ, pq0 = pq \f1\u8853?\f0  (e, p)\par
+\lang1033\par
+pop (pq, e, p)\par
+Description: pops (removes) from the priority queue the\par
+element with the highest priority. It returns both the element\par
+and its priority\par
+Pre: pq \f1\u8712?\f0  PQ, pq is not empty\par
+Post:e \f1\u8712?\f0  TElem, p \f1\u8712?\f0  TPriority, e is the element with the\par
+highest priority from pq, p is its priority.\par
+pq0 \f1\u8712?\f0  PQ, pq0 = pq - (e, p)\par
+Throws: an exception if the priority queue is empty.\par
+\lang1033\par
+\par
+top (pq, e, p)\par
+Description: returns from the priority queue the element with\par
+the highest priority and its priority. It does not modify the\par
+priority queue.\par
+Pre: pq \f1\u8712?\f0  PQ, pq is not empty\par
+Post: e \f1\u8712?\f0  TElem, p \f1\u8712?\f0  TPriority, e is the element with the\par
+highest priority from pq, p is its priority.\par
+Throws: an exception if the priority queue is empty.\par
+\f2\lang1033\par
+\f0\par
+isEmpty(pq)\par
+Description: checks if the priority queue is empty (it has no\par
+elements)\par
+Pre: pq \f1\u8712?\f0  PQ\par
+Post:\par
+isEmpty \f1\u8592?\f0\par
+true, if pq has no elements\par
+false, otherwise\par
+\lang1033\par
+\par
+\par
+\par
+\par
+\fs40 Representation:\fs22\par
+Node:\par
+\tab e:TElem\par
+\tab p:TPriority\par
+\tab left: \f1\u8593?\f0  Elem\par
+\tab right: \f1\u8593?\f0  Elem\par
+\par
+PriorityQueue:\par
+\tab rel: \f1\u8593?\f0  Relation\par
+\tab root: \f1\u8593?\f0  Node\par
+\par
+\par
+\fs40\lang1033 Specifications:\par
+\fs22 The ADT Priority Queue is a container in which each element\par
+has an associated priority (of type TPriority).\par
+In a Priority Queue access to the elements is restricted: we\par
+can access only the element with the highest priority.\par
+Because of this restricted access, we say that the Priority\par
+Queue works based on a HPF - Highest Priority First policy.\par
+\par
+In order to work in a more general manner, we can define a\par
+relation R on the set of priorities: R : TPriority \'d7 TPriority\par
+When we say the element with the highest priority we will\par
+mean that the highest priority is determined using this relation\par
+R.\par
+If the relation R = \rdblquote\f1\u8805?\rdblquote , the element with the highest priority\par
+is the one for which the value of the priority is the largest\par
+(maximum).\par
+Similarly, if the relation R = \rdblquote\u8804?\rdblquote , the element with the\par
+highest priority is the one for which the value of the priority is\par
+the lowest (minimum).\par
+\f0\fs40\lang1033\par
+\fs22\par
+\fs40 Pseudocode:\par
+\fs22 Subalgorithm init(pq,r) is:\par
+\tab head \f1\u8592? NIL\par
+\tab rel \u8592? r\par
+End-subalgorithm\par
+Complexity:\f3\lang1032\'e8(1)\par
+\par
+\par
+\par
+\par
+Subalgorithm destroy(pq) is:\par
+\tab head \f1\u8592? NIL\par
+End-subalgorithm\par
+Complexity:\f3\lang1032\'e8(1)\par
+\par
+\par
+\par
+function push(pq,e,p) is:\par
+\tab if root = NIL then\par
+\tab\tab root \f1\u8592? node\par
+\tab\tab push \u8592? true\par
+\tab end-if\par
+\tab else\par
+\tab\tab ok \u8592? 1\par
+\tab\tab cn \u8593? BSTNode(e,p)\par
+\tab\tab cn \u8592? root\par
+\tab\tab while cn.getLeft() != \f2\lang1033 NIL\f4  or cn.getRight() != NIL and ok = 1 execute:\par
+\tab\tab\tab if node.getTPriority().relation(cn.getTPriority(), rel) = 1 and cn->getLeft() = NIL then\par
+\tab\tab\tab\tab cn.setLeft(node)\par
+\tab\tab\tab\tab ok \f1\u8592? 0\par
+\tab\tab\tab\tab push \u8592? true\par
+\tab\tab\tab end-if\par
+\tab\tab\tab else if node.getTPriority().relation(cn.getTPriority(), rel) = 0 and cn.getRight() = NIL then\par
+\tab\tab\tab\tab cn.setRight(node)\par
+\tab\tab\tab\tab ok \u8592? 0\par
+\tab\tab\tab\tab push \u8592?true\par
+\tab\tab\tab end-if\par
+\tab\tab\tab else if (node.getTPriority().relation(cn.getTPriority(), rel) = 1) then\par
+\tab\tab\tab\tab cn \u8592? cn.getLeft()\par
+\tab\tab\tab end-if\par
+\tab\tab\tab else if (node.getTPriority().relation(cn.getTPriority(), rel) = 0) then\par
+\tab\tab\tab\tab cn \u8592? cn.getRight()\par
+\tab\tab\tab end-if\par
+\tab\tab end-while\par
+\tab\tab if ok = 1 then\par
+\tab\tab\tab if node.getTPriority().relation(cn.getTPriority(), rel) = 1 then\par
+\tab\tab\tab\tab cn.setLeft(node)\par
+\tab\tab\tab\tab push \u8592? true\par
+\tab\tab\tab end-if\par
+\tab\tab\tab else\par
+\tab\tab\tab\tab cn.setRight(node)\par
+\tab\tab\tab\tab push \u8592? true\par
+\tab\tab\tab end-if\par
+\tab\tab end-if\tab\tab\par
+\tab end-if\par
+\tab push \u8592? false\par
+End-subalgorithm\par
+\f0\lang1033 Average:O\f2 (log\sub 2\nosupersub\f0 n\f2 )\par
+Worst case:\f5\lang1032\'c8\f2\lang1033 (\f0 n\f2 ) \par
+Total complexity:O(n)\par
+n-number of elements in the priority queue\f0\par
+\f4\par
+\par
+\par
+\par
+function pop(e,p) is:\par
+\tab if root = NIL then\par
+\tab\tab pop \f1\u8592? false\par
+\tab end-if\par
+\tab else\par
+\tab\tab cn \u8593? BSTNode\par
+\tab\tab cn \u8592? root\par
+\tab\tab if cn.getRight() = NIL and cn.getLeft() = NIL then\par
+\tab\tab\tab e \u8592? root.getTElem()\par
+\tab\tab\tab p \u8592? root.getTPriority()\par
+\tab\tab\tab root \u8592? NIL\par
+\tab\tab\tab pop \u8592? true\par
+\tab\tab end-if\par
+\tab\tab else if cn.getRight() = NIL and cn.getLeft()!= NIL then\par
+\tab\tab\tab e \u8592? root.getTElem()\par
+\tab\tab\tab p \u8592? root.getTPriority()\par
+\tab\tab\tab this.setRoot(root.getLeft())\par
+\tab\tab\tab pop \u8592? true\par
+\tab\tab end-if\par
+\tab\tab else\par
+\tab\tab\tab while cn.getRight().getRight() != NIL execute:\par
+\tab\tab\tab\tab cn \u8592? cn.getRight()\par
+\tab\tab\tab end-while\par
+\tab\tab\tab e \u8592? cn.getRight().getTElem()\par
+\tab\tab\tab p \u8592? cn.getRight().getTPriority()\par
+\tab\tab\tab if cn.getRight().getLeft() != NIL then\par
+\tab\tab\tab\tab if cn.getRight().getLeft().getTPriority().relation(cn.getTPriority(), rel) == 1)\par
+\tab\tab\tab\tab\tab cn.setLeft(cn.getRight().getLeft())\par
+\tab\tab\tab\tab\tab cn.setRight(NIL)\par
+\tab\tab\tab\tab end-if\par
+\tab\tab\tab\tab else\par
+\tab\tab\tab\tab\tab cn.setRight(cn.getRight().getLeft())\par
+\tab\tab\tab\tab end-if\par
+\tab\tab\tab end-if\par
+\tab\tab\tab else\par
+\tab\tab\tab\tab cn.setRight(NIL);\par
+\tab\tab\tab pop \u8592? true\par
+\tab\tab end-if\par
+End-function\par
+\f0\lang1033 Average:O\f2 (log\sub 2\nosupersub\f0 n\f2 )\par
+Worst case:\f5\lang1032\'c8\f2\lang1033 (\f0 n\f2 ) \par
+Total complexity:O(n)\par
+n-number of elements in the priority queue\f0\par
+\f4\par
+\par
+\par
+\par
+\par
+function top(pq,e,p) is:\par
+\f2\tab\f3\lang1032 if root = NIL then\par
+\tab\tab\f2\lang1033 top \f1\u8592? \f2\lang1033 NIL\f4\par
+\tab end-if\par
+\f2\tab\f4 cn \f1\u8593? BSTNode\par
+\f2\lang1033\tab\f4 cn \f1\u8592? root\par
+\f2\lang1033\tab\f4 while cn.get\f2 Right\f4 () != \f2 NIL\f4  \f2 execute:\par
+\tab\tab\f4 cn \f1\u8592? cn.getRight()\par
+\f2\lang1033\tab end-while\par
+\tab top \f1\u8592?\f2\lang1033  cn\f4\par
+End-function\par
+\f0 Average:O\f2 (log\sub 2\nosupersub\f0 n\f2 )\par
+Worst case:\f5\lang1032\'c8\f2\lang1033 (\f0 n\f2 ) \par
+Total complexity:O(n)\par
+n-number of elements in the priority queue\f0\par
+\f4\par
+\f3\lang1032\par
+\par
+\par
+function isEmpty(pq) is:\par
+\tab if root = NIL then\par
+\tab\tab isEmpty \f1\u8592? true\par
+\tab else\par
+\tab\tab isEmpty \u8592? false\par
+\tab end-if\par
+End-function\par
+Complexity:\f3\lang1032\'e8(1)\par
+\par
+\f4\par
+\par
+\f0\lang1033\par
+
+\pard\sa200\sl240\slmult1\fs40\lang9 Tests:\fs22\par
+PriorityQueue b("<");\par
+Name e("a");\par
+Number p(1);\par
+Client client(e, p);\par
+\par
+Name e1("b");\par
+Number p1(0);\par
+Client client1(e1, p1);\par
+\par
+Name e2("c");\par
+Number p2(-1);\par
+Client client2(e2, p2);\par
+\par
+Name e3("d");\par
+Number p3(4);\par
+Client client3(e3, p3);\par
+\par
+Number p4(5);\par
+\par
+assert(b.push(&client) == 1);\par
+assert(b.push(&client1) == 1);\par
+assert(b.push(&client2) == 1);\par
+assert(b.push(&client3) == 1);\par
+assert(b.top() == &client3);\par
+\par
+\par
+assert(b.isEmpty() == 0);\par
+Name e6;\par
+Number p6;\par
+\par
+assert(b.pop(&e6,&p6) == 1);\par
+assert(b.pop(&e6, &p6) == 1);\par
+assert(b.pop(&e6, &p6) == 1);\par
+assert(b.pop(&e6, &p6) == 1);\par
+assert(b.pop(&e6, &p6) == 0);\par
+assert(b.isEmpty() == 1);\par
+\par
+
+\pard\sa200\sl276\slmult1\par
+\par
+}
+ 

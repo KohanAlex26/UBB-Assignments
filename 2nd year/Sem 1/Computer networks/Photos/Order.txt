@@ -1,0 +1,9 @@
+1)UDP
+2)TCP
+3)Se transmite o litera de la client la server, serveru trimite inapoi litera dublata
+4)Intoare cuvintele concatenate
+5)Clientul trimite 2 numere, serverul intoarce suma
+6)Clientul trimite serverului un sir de caractere (de exemplu numele utilizatorului citit de la tastatura).
+Serverul afiseaza pe ecran sirul primit si portul clientului si ii raspunde acestuia cu suma cifrelor din Portul clientului. 
+Clientul va afisa pe ecran numarul primit.
+7)Fork(Multithread Server)

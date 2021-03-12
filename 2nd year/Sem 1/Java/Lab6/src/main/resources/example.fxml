@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ctrl.CarShopController">
+    <tabs>
+        <Tab text="Add Car">
+            <content>
+                <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <Text fill="blue" text="Fill in car... " textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+                    <Label text="Brand" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="brand" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label text="Model" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="model" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label text="Color" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="color" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label text="Seats" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <TextField fx:id="seats" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                    <HBox alignment="BOTTOM_RIGHT" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                        <children>
+                            <Button fx:id="addButton" onAction="#addCarHandler" text="Add car">
+                                <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                </HBox.margin></Button>
+                            <Button onAction="#clearFieldsHandler" text="Clear fields" />
+                        </children>
+
+                    </HBox>
+                    <Text fx:id="carID" fill="green" text="" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+
+                </GridPane>
+            </content>
+        </Tab>
+        <Tab text="Add Car Reservation">
+            <content>
+                <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <Label text="Search Car by model" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="carModel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button fx:id="searchButton" onAction="#searchModelCarHandler" text="Search..." GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Label text="Search results:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TableView fx:id="carNotReserved" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                        <columns>
+                            <TableColumn text="Car ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Brand">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="brand" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Model">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="model" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Color">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="color" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                    <Label text="Name " GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+                    <TextField fx:id="ownerName" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+                    <Label text="Address " GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <TextField fx:id="ownerAddress" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    <Label text="Number " GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                    <TextField fx:id="phoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                    <HBox alignment="BOTTOM_RIGHT" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="8">
+                        <children>
+                            <Label text="Date: " />
+                            <DatePicker fx:id="reservedDate" />
+                            <Button fx:id="repairButton" onAction="#addCarReservationHandler" text="Add Car Reservation" />
+                        </children>
+                    </HBox>
+                </GridPane>
+            </content>
+        </Tab>
+        <Tab text="CarStatus">
+            <content>
+                <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <Label text="Search car by status" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <ChoiceBox fx:id="carStat" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button fx:id="searchRepairedButton" onAction="#carReservedHandler" text="Show ..." GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Label text="Search results:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TableView fx:id="carReserved" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                        <columns>
+                            <TableColumn text="Car ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="ID" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Model">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="model" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Brand">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="brand" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Seats">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="seats" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+
+                </GridPane>
+            </content>
+        </Tab>
+        <Tab text="Certain Brand">
+            <content>
+                <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <Label text="Search Car by brand" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="carBrand" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button fx:id="searchBrandButton" onAction="#searchBrandCarHandler" text="Search..." GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Label text="Search results:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TableView fx:id="carsWithBrand" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                        <columns>
+                            <TableColumn text="Car ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Brand">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="brand" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Model">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="model" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Color">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="color" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                </GridPane>
+            </content>
+        </Tab>
+        <Tab text="Certain Color">
+            <content>
+                <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <Label text="Search Car by color" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="carColor" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button fx:id="searchColorButton" onAction="#searchColorCarHandler" text="Search..." GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Label text="Search results:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TableView fx:id="carsWithColor" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                        <columns>
+                            <TableColumn text="Car ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Brand">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="brand" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Model">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="model" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Color">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="color" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                </GridPane>
+            </content>
+        </Tab>
+        <Tab text="Certain Seats">
+            <content>
+                <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+
+                    <Label text="Search Car by seats" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="carSeats" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button fx:id="searchSeatsButton" onAction="#searchSeatsCarHandler" text="Search..." GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Label text="Search results:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TableView fx:id="carsWithSeats" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                        <columns>
+                            <TableColumn text="Car ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Brand">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="brand" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Model">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="model" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Color">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="color" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                </GridPane>
+            </content>
+        </Tab>
+        <Tab text="Delete And Update Car">
+            <content>
+                <GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <Button fx:id="searchAllButton" onAction="#searchAllCarsHandler" text="Search..." GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                    <Label text="Search results:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TableView fx:id="cars" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                        <columns>
+                            <TableColumn text="Car ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Brand">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="brand" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Model">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="model" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn text="Color">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="color" />
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        </columnResizePolicy>
+                    </TableView>
+                    <Label text="Brand" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+                    <TextField fx:id="brandUpdate" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+                    <Label text="Model" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.rowSpan="2"/>
+                    <TextField fx:id="modelUpdate" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.rowSpan="2"/>
+                    <Label text="Color" GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.rowSpan="2"/>
+                    <TextField fx:id="colorUpdate" GridPane.columnIndex="1" GridPane.rowIndex="9" GridPane.rowSpan="2"/>
+                    <Label text="Seats" GridPane.columnIndex="0" GridPane.rowIndex="12" GridPane.rowSpan="2"/>
+                    <TextField fx:id="seatsUpdate" GridPane.columnIndex="1" GridPane.rowIndex="12" GridPane.rowSpan="2"/>
+                    <HBox alignment="BOTTOM_RIGHT" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="18">
+                        <children>
+                            <Button fx:id="deleteButton" onAction="#deleteCarHandler" text="Delete Car">
+                                <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                </HBox.margin></Button>
+                            <Button fx:id="updateButton" onAction="#updateCarHandler" text="Update"/>
+                        </children>
+                    </HBox>
+                </GridPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

@@ -1,0 +1,104 @@
+USE TestPracticII
+GO
+CREATE TABLE Tournament(
+TID INT PRIMARY KEY,
+TName VARCHAR(100),
+TStart DATE,
+TEnd DATE,
+)
+
+CREATE TABLE Court(
+CID INT PRIMARY KEY,
+CName VARCHAR(100),
+CCapacity INT,
+TID INT FOREIGN KEY REFERENCES Tournament(TID)
+)
+
+CREATE TABLE Player(
+PID INT PRIMARY KEY,
+PNAME VARCHAR(100),
+PMoney INT,
+PPoints INT,
+)
+
+CREATE TABLE Matches(
+MID INT PRIMARY KEY,
+PID1 INT FOREIGN KEY REFERENCES Player(PID),
+PID2 INT FOREIGN KEY REFERENCES Player(PID),
+CID INT UNIQUE FOREIGN KEY REFERENCES Court(CID),
+MDate DATE,
+MTime TIME
+)
+
+CREATE TABLE Sponsors(
+SponsorId INT PRIMARY KEY,
+SName VARCHAR(100),
+budget INT
+)
+
+CREATE TABLE Sponsors_Players(
+PID INT FOREIGN KEY REFERENCES Player(PID),
+SponsorId INT FOREIGN KEY REFERENCES Sponsors(SponsorId),
+PRIMARY KEY(PID,SponsorId)
+)
+
+CREATE TABLE SponsorShipContract(
+SSCValue INT,
+PID INT FOREIGN KEY REFERENCES Player(PID) UNIQUE,
+SponsorId INT FOREIGN KEY REFERENCES Sponsors(SponsorId),
+PRIMARY KEY(PID,SponsorId)
+)
+
+
+--b
+CREATE OR ALTER PROC uspAddSponsorship(@PID INT,@SID INT,@value INT) 
+AS
+	IF EXISTS(SELECT *
+			FROM SponsorShipContract
+			WHERE SponsorId=@SID AND PID=@PID
+			)
+		UPDATE SponsorShipContract
+		SET SSCValue=@value
+		WHERE SponsorId=@SID AND PID=@PID
+	ELSE
+		INSERT SponsorShipContract(SSCValue,PID,SponsorId)
+		VALUES(@value,@PID,@SID)
+GO
+EXEC uspAddSponsorship @PID=1 ,@SID= 1,@value=20
+EXEC uspAddSponsorship @PID=2 ,@SID= 2,@value=100001
+
+--c
+CREATE OR ALTER VIEW vShowPlayers
+AS
+	SELECT p.PNAME,p.PID
+	FROM Player p
+	WHERE p.PID IN
+		(SELECT SSC.PID
+		FROM SponsorShipContract SSC
+		WHERE SSC.SSCValue>100000
+		)
+GO
+
+
+SELECT *
+FROM vShowPlayers
+GO
+
+--d
+CREATE OR ALTER FUNCTION ufNames(@S INT)
+RETURNS TABLE
+RETURN SELECT P.PNAME
+	FROM Player P
+	WHERE P.PID IN
+		(SELECT SP.PID
+		FROM Sponsors_Players SP
+		GROUP BY SP.PID
+		HAVING COUNT(*)>=@S)
+
+SELECT *
+FROM ufNames(3)
+
+INSERT Player VALUES(1,'a',1,1),(2,'a',1,1),(3,'a',1,1)
+INSERT Sponsors VALUES(1,'a',1),(2,'a',1),(3,'a',1)
+INSERT Sponsors_Players VALUES(1,1),(1,2)
+

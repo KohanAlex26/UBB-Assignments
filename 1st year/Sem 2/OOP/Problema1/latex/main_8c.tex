@@ -1,0 +1,92 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a8abcc2f2cbabd72c06e81f8a4dad24cf}{Is\+Positive}} (int nr)
+\begin{DoxyCompactList}\small\item\em verify if the number \char`\"{}nr\char`\"{} is positive \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a81016169db78eb3cfb8fe856f5372edd}{Is\+Well\+Ordered}} (int nr)
+\begin{DoxyCompactList}\small\item\em verify if the number \char`\"{}nr\char`\"{} is Well Ordered(strictly ascending or strictly descending or random order) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ada56da9a0e43bb881af54da7e49f3277}{longest\+Subseq}} (int nr, int v\mbox{[}$\,$\mbox{]}, int $\ast$start, int $\ast$stop, int($\ast$\mbox{\hyperlink{main_8c_a81016169db78eb3cfb8fe856f5372edd}{Is\+Well\+Ordered}})(int), int($\ast$\mbox{\hyperlink{main_8c_a8abcc2f2cbabd72c06e81f8a4dad24cf}{Is\+Positive}})(int))
+\begin{DoxyCompactList}\small\item\em gets the longest subsequence with Well Ordered numbers \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_aa100be0b0bb7a390cc3cadcf4eab1dfc}{menu\+\_\+option}} (option)
+\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a8abcc2f2cbabd72c06e81f8a4dad24cf}\label{main_8c_a8abcc2f2cbabd72c06e81f8a4dad24cf}} 
+\index{main.c@{main.c}!IsPositive@{IsPositive}}
+\index{IsPositive@{IsPositive}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{IsPositive()}{IsPositive()}}
+{\footnotesize\ttfamily int Is\+Positive (\begin{DoxyParamCaption}\item[{int}]{nr }\end{DoxyParamCaption})}
+
+
+
+verify if the number \char`\"{}nr\char`\"{} is positive 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr} & -\/ \mbox{[}in\mbox{]} number to be verified \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the number is positive or 0 if it is negative 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8c_a81016169db78eb3cfb8fe856f5372edd}\label{main_8c_a81016169db78eb3cfb8fe856f5372edd}} 
+\index{main.c@{main.c}!IsWellOrdered@{IsWellOrdered}}
+\index{IsWellOrdered@{IsWellOrdered}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{IsWellOrdered()}{IsWellOrdered()}}
+{\footnotesize\ttfamily int Is\+Well\+Ordered (\begin{DoxyParamCaption}\item[{int}]{nr }\end{DoxyParamCaption})}
+
+
+
+verify if the number \char`\"{}nr\char`\"{} is Well Ordered(strictly ascending or strictly descending or random order) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr} & -\/ \mbox{[}in\mbox{]} number to be verified \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the number is strictly ascending, -\/1 if it strictly descending, 0 if it is random and 2 if it is less than 10 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8c_ada56da9a0e43bb881af54da7e49f3277}\label{main_8c_ada56da9a0e43bb881af54da7e49f3277}} 
+\index{main.c@{main.c}!longestSubseq@{longestSubseq}}
+\index{longestSubseq@{longestSubseq}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{longestSubseq()}{longestSubseq()}}
+{\footnotesize\ttfamily void longest\+Subseq (\begin{DoxyParamCaption}\item[{int}]{nr,  }\item[{int}]{v\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{start,  }\item[{int $\ast$}]{stop,  }\item[{int($\ast$)(int)}]{Is\+Well\+Ordered,  }\item[{int($\ast$)(int)}]{Is\+Positive }\end{DoxyParamCaption})}
+
+
+
+gets the longest subsequence with Well Ordered numbers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr} & -\/ \mbox{[}in\mbox{]} number of elements in the vector \\
+\hline
+{\em v} & -\/ \mbox{[}in\mbox{]} the vector \\
+\hline
+{\em start} & -\/ \mbox{[}out\mbox{]} where the sequence starts from \\
+\hline
+{\em stop} & -\/ \mbox{[}out\mbox{]} where the sequence stops \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+start and stop, where the sequence starts and where it stops 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_aa100be0b0bb7a390cc3cadcf4eab1dfc}\label{main_8c_aa100be0b0bb7a390cc3cadcf4eab1dfc}} 
+\index{main.c@{main.c}!menu\_option@{menu\_option}}
+\index{menu\_option@{menu\_option}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{menu\_option()}{menu\_option()}}
+{\footnotesize\ttfamily void menu\+\_\+option (\begin{DoxyParamCaption}\item[{option}]{ }\end{DoxyParamCaption})}
+

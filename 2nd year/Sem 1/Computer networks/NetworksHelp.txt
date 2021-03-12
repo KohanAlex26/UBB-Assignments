@@ -1,0 +1,58 @@
+adrese private:10.0.0.0 to 10.255.255.255  /8
+
+ 172.16.0.0 to 172.31.255.255  		  /12
+
+ 192.168.0 0 to 192.168.255.255  	  /16
+
+MAC Broadcast address: FF:FF:FF:FF:FF:FF
+MAC:6 bytes/ 48 biti (hexa numbers)
+MAC poate fi schimbata
+
+TCP:
+Server:socket,bind,listen,recv,send,accept
+Client:socket,connect,send,recv
+AF_INET si SOCK_STREAM
+
+UDP:
+Server:socket,bind,recvfrom(data,addr),sendto
+Client:socket,sendto,recvfrom
+AF_INET si SOCK_DGRAM
+
+Appliatie:HTTP,FTP,IRC,SSH,DNS
+
+Presentation:SSL,SSH,IMAP,FTP,MPEG,JPEG
+
+Transport:TCP,UDP
+
+Retea:IP,ICMP,IPSec,IGMP
+
+Link:Ethernet,PPP,Switch,Bridge
+
+Phisical:Coax,Fiber,Wireless,Hubs,Repeaters
+
+HTTP transmite criptat datele
+
+Exista mai multe tipuri de socket
+
+Hub:intelege Mac
+Hub:nu este mai performant ca un switch
+
+Gateway:routerul pc-ului
+
+127.0.0.1 nu poate fi setata pe un sistem ca server DNS
+LocalHost: 127.0.0.1(nu poate fi adresa de broadcast,nu poate fi adresa de retea)
+LAN-Local Area Network
+In LAN nu pot exista mai multe calculatoare cu adresa 192.168.1.1
+
+Adresa de broadcast se poate calcula pe baza adresei de retea si a netmask-ului
+Netmask-ul nu se poate determina pe baza adresei IP si a adresei de broadcast
+Un switch poate transporta pachete IP.
+Adresa de retea se poate calcula pe baza adresei IP si a netmask-ului
+Operaţia logica AND între masca şi adresa IP are ca rezultat adresa retelei.
+Operaţia logica OR între masca şi adresa IP are ca rezultat adresa broadcast
+O retea cu netmask-ul 255.255.255.0 poate avea maxim 2^8-2=254 calculatoare.
+Default gateway-ul unui calculator este IP-ul routerului din reteaua respectiva
+Doua calculatoare din Internet pot sa aiba aceeasi adresa IP daca folosesc adrese IP false
+Un switch poate transporta pachete UDP
+Adresa de broadcast se poate calcula pe baza adresei de retea si a netmask-ului
+11111111.10000000.00000000.00000000 !!!!!= 255.1.0.0(nu is egale)

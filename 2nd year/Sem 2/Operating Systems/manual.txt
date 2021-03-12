@@ -1,0 +1,54 @@
+1. ls - list the directory of the contents
+ls [OPTION] .. [FILE]
+ls -a  lists all files in the directory 
+ls -l long format
+
+2.pwd - print name of current/working directory
+pwd [OPTION]
+
+3.cd - change directory
+
+4.mkdir - make directories
+mkdir [OPTION]... DIRECTORY...
+
+5.rmdir - remove empty directories
+rmdir [OPTION]... DIRECTORY...
+
+6.rm - remove files or directories
+rm [OPTION]... FILE...
+
+7.cp - copy files and directories
+cp [OPTION]... [-T] SOURCE DEST
+
+8.mv - move (rename) files
+mv [OPTION]... [-T] SOURCE DEST
+
+9.cat - concatenate files and print on the standard output
+cat [OPTION]... [FILE]...
+
+10.last, lastb - show listing of last logged in users
+last  [-R] [-num] [ -n num ] [-adFiowx] [ -f file ][ -t YYYYMMDDHHMMSS
+       ] [name...]  [tty...]
+
+11.finger - user information lookup program
+finger [-lmsp] [user ...] [user@host ...]
+
+12.ps - report a snapshot of the current processes.
+ps [options]
+
+13.kill - terminate a process
+kill [-s signal|-p] [--] pid...
+
+14.cut - remove sections from each line of files
+cut OPTION... [FILE]...
+
+15.grep, egrep, fgrep - print lines matching a pattern
+grep [OPTIONS] PATTERN [FILE...]
+
+16.pine - email client
+
+17.Less is a program similar to more (1), but which allows backward  move-
+ ment in the file as well as forward movement.
+
+18.man - format and display the on-line manual pages
+
