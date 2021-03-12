@@ -1,0 +1,6 @@
+*/venv/*
+*/.vs/*
+*/.idea/*
+*/application/*
+__pychache__/
+file.txt
