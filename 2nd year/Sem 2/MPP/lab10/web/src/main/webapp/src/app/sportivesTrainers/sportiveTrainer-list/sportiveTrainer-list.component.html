@@ -1,0 +1,22 @@
+<div *ngIf="selectedSportiveTrainer">
+  <h2>
+    {{selectedSportiveTrainer.trainingType | uppercase}} was selected
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+<h2>SportiveTrainers</h2>
+<ol class="sportiveTrainers">
+  <li *ngFor="let sportiveTrainer of sportiveTrainers "
+      [class.selected]="sportiveTrainer === selectedSportiveTrainer"
+      (click)="onSelect(sportiveTrainer)">
+    {{sportiveTrainer.id}}
+    {{sportiveTrainer.sportiveID}}
+    {{sportiveTrainer.trainerID}}
+    {{sportiveTrainer.cost}}
+    {{sportiveTrainer.trainingType}}
+  </li>
+  <button (click)="increasePageNo()" id="increase-btn">next</button>
+  <br>
+  <button (click)="decreasePageNo()" id="decrease-btn">prev</button>
+</ol>

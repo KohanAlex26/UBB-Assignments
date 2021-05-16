@@ -1,0 +1,33 @@
+<label>Sportive ID :
+  <input #sportiveID/>
+  <br/>
+</label>
+
+<button (click)="filterSportiveTrainers(sportiveID.value)">
+  Filter
+</button>
+
+<ol class="trainers">
+  <li *ngFor="let trainer of trainers ">
+    {{trainer.id}}
+    {{trainer.firstName}}
+    {{trainer.lastName}}
+    {{trainer.age}}
+  </li>
+</ol>
+
+
+
+<!--<button (click)="filterSportiveTrainersAngular(sportiveID.value)">-->
+<!--  Filter front-->
+<!--</button>-->
+
+<!--<ol class="sportiveTrainers">-->
+<!--  <li *ngFor="let sportiveTrainer of sportiveTrainersWithAngular">-->
+<!--    {{sportiveTrainer.sportiveID}}-->
+<!--    {{sportiveTrainer.trainerID}}-->
+<!--    {{sportiveTrainer.cost}}-->
+<!--    {{sportiveTrainer.trainingType}}-->
+<!--  </li>-->
+<!--</ol>-->
+

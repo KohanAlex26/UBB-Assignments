@@ -1,0 +1,25 @@
+<div *ngIf="selectedTrainer">
+  <h2>
+    {{selectedTrainer.firstName | uppercase}} was selected
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+<h2>Trainers</h2>
+<ol class="trainers">
+  <li *ngFor="let trainer of trainers "
+      [class.selected]="trainer === selectedTrainer"
+      (click)="onSelect(trainer)">
+    {{trainer.id}}
+    {{trainer.firstName}}
+    {{trainer.lastName}}
+    {{trainer.age}}
+    <button
+      [class.delete]="true"
+      (click)="deleteTrainer(trainer);$event.stopPropagation()">delete
+    </button>
+  </li>
+  <button (click)="increasePageNo()" id="increase-btn">next</button>
+  <br>
+  <button (click)="decreasePageNo()" id="decrease-btn">prev</button>
+</ol>

@@ -1,0 +1,24 @@
+<label>Id:
+  <input #id required/>
+  <br/>
+</label>
+<label>First name:
+  <input #firstName required/>
+  <br/>
+</label>
+
+<label>Last Name:
+  <input #lastName required/>
+  <br/>
+</label>
+
+<label>Age:
+  <input #age required/>
+  <br/>
+</label>
+
+<button (click)="saveTrainer(id.value,firstName.value,lastName.value, age.value)">
+  Save
+</button>
+
+

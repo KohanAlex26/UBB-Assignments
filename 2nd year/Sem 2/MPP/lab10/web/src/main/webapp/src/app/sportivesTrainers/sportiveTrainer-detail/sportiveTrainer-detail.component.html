@@ -1,0 +1,17 @@
+<div *ngIf="sportiveTrainer">
+    <h2>Sportive {{sportiveTrainer.trainingType}} details</h2>
+    <div>
+        <label>Trainer ID: </label> {{sportiveTrainer.trainerID}}
+        <input [(ngModel)]="sportiveTrainer.trainerID" placeholder="trainerID">
+    </div>
+   <div>
+       <label>Sportive ID: </label> {{sportiveTrainer.sportiveID}}
+       <input [(ngModel)]="sportiveTrainer.sportiveID" placeholder="sportiveID">
+   </div>
+    <div>
+        <label>Cost: </label> {{sportiveTrainer.cost}}
+        <input [(ngModel)]="sportiveTrainer.cost" placeholder="cost">
+    </div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+</div>

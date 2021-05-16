@@ -1,0 +1,26 @@
+<div *ngIf="selectedSportive">
+  <h2>
+    {{selectedSportive.firstName | uppercase}} was selected
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+<h2>Sportives</h2>
+<ol class="sportives">
+  <li *ngFor="let sportive of sportives "
+      [class.selected]="sportive === selectedSportive"
+      (click)="onSelect(sportive)">
+    {{sportive.id}}
+    {{sportive.firstName}}
+    {{sportive.lastName}}
+    {{sportive.age}}
+    {{sportive.tid}}
+    <button
+      [class.delete]="true"
+      (click)="deleteSportive(sportive);$event.stopPropagation()">delete
+    </button>
+  </li>
+  <button (click)="increasePageNo()" id="increase-btn">next</button>
+  <br>
+  <button (click)="decreasePageNo()" id="decrease-btn">prev</button>
+</ol>

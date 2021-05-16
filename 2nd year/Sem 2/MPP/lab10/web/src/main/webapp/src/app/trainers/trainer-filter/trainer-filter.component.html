@@ -1,0 +1,29 @@
+<label>First Name :
+  <input #firstName/>
+  <br/>
+</label>
+
+<button (click)="filterTrainers(firstName.value)">
+  Filter
+</button>
+
+<ol class="trainers">
+  <li *ngFor="let trainer of trainers ">
+    {{trainer.firstName}}
+    {{trainer.lastName}}
+    {{trainer.age}}
+  </li>
+</ol>
+
+
+<button (click)="filterTrainersAngular(firstName.value)">
+  Filter front
+</button>
+
+<ol class="trainers">
+  <li *ngFor="let trainer of trainersWithAngular">
+    {{trainer.firstName}}
+    {{trainer.lastName}}
+    {{trainer.age}}
+  </li>
+</ol>
