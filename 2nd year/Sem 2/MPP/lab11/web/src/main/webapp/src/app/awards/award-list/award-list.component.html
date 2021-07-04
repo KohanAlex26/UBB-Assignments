@@ -1,0 +1,23 @@
+<div *ngIf="selectedAward">
+  <h2>
+    {{selectedAward.date | uppercase}} was selected
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+<h2>Awards</h2>
+<ol class="awards">
+  <li *ngFor="let award of awards "
+      [class.selected]="award === selectedAward"
+      (click)="onSelect(award)">
+    {{award.id}}
+    {{award.date}}
+    <button
+      [class.delete]="true"
+      (click)="deleteAward(award);$event.stopPropagation()">delete
+    </button>
+  </li>
+  <button (click)="increasePageNo()" id="increase-btn">next</button>
+  <br>
+  <button (click)="decreasePageNo()" id="decrease-btn">prev</button>
+</ol>

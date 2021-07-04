@@ -1,0 +1,27 @@
+<label>Id:
+  <input #id required/>
+  <br/>
+</label>
+<label>First name:
+  <input #firstName required/>
+  <br/>
+</label>
+
+<label>Last Name:
+  <input #lastName required/>
+  <br/>
+</label>
+
+<label>Age:
+  <input #age required/>
+  <br/>
+</label>
+
+<label>Team Id:
+  <input #tid required/>
+  <br/>
+</label>
+
+<button (click)="updateSportive(Number(id.value),firstName.value,lastName.value, age.value,tid.value)">
+  Save
+</button>

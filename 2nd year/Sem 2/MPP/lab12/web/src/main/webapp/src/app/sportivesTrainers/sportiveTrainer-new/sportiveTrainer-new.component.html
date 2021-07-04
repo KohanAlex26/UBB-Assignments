@@ -1,0 +1,23 @@
+<label>Cost:
+  <input #cost required/>
+  <br/>
+</label>
+<label>Training Type:
+  <input #trainingType required/>
+  <br/>
+</label>
+<label>Sportive ID:
+  <input #sportiveId required/>
+  <br/>
+</label>
+<label>Trainer ID:
+  <input #trainerId required/>
+  <br/>
+</label>
+
+
+<button (click)="saveSportiveTrainer(cost.value,trainingType.value,sportiveId.value,trainerId.value)">
+  Save
+</button>
+
+

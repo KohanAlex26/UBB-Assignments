@@ -1,0 +1,9 @@
+<div *ngIf="team">
+    <h2>Team {{team.id}} details</h2>
+    <div>
+        <label>Team Name: </label> {{team.teamName}}
+        <input [(ngModel)]="team.teamName" placeholder="teamName">
+    </div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+</div>

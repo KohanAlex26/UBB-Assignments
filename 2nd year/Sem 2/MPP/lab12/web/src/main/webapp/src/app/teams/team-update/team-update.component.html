@@ -1,0 +1,13 @@
+<label>Id:
+  <input #id required/>
+  <br/>
+</label>
+<label>First name:
+  <input #teamName required/>
+  <br/>
+</label>
+
+
+<button (click)="updateTeam(Number(id.value),teamName.value)">
+  Save
+</button>

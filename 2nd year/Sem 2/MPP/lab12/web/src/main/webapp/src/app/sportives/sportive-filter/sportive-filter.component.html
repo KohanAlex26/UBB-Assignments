@@ -1,0 +1,31 @@
+<label>Name filter :
+  <input #firstName/>
+  <br/>
+</label>
+
+<button (click)="filterSportives(firstName.value)">
+  Filter
+</button>
+
+<ol class="sportives">
+  <li *ngFor="let sportive of sportives ">
+    {{sportive.firstName}}
+    {{sportive.lastName}}
+    {{sportive.age}}
+    {{sportive.tid}}
+  </li>
+</ol>
+
+
+<button (click)="filterSportivesAngular(firstName.value)">
+  Filter front
+</button>
+
+<ol class="sportives">
+  <li *ngFor="let sportive of sportivesWithAngular">
+    {{sportive.firstName}}
+    {{sportive.lastName}}
+    {{sportive.age}}
+    {{sportive.tid}}
+  </li>
+</ol>

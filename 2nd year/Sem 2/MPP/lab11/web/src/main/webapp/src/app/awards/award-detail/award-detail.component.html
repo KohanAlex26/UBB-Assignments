@@ -1,0 +1,9 @@
+<div *ngIf="award">
+    <h2>Award {{award.id}} details</h2>
+  <div>
+  <label>Last Name: </label> {{award.date}}
+  <input [(ngModel)]="award.date" placeholder="date">
+  </div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+</div>

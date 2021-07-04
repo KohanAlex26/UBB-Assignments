@@ -1,0 +1,27 @@
+<label>Team Name :
+  <input #teamName/>
+  <br/>
+</label>
+
+<button (click)="filterTeams(teamName.value)">
+  Filter
+</button>
+
+<ol class="teams">
+  <li *ngFor="let team of teams ">
+    {{team.id}}
+    {{team.teamName}}
+  </li>
+</ol>
+
+
+<button (click)="filterTeamsAngular(teamName.value)">
+  Filter front
+</button>
+
+<ol class="teams">
+  <li *ngFor="let team of teamsWithAngular">
+    {{team.id}}
+    {{team.teamName}}
+  </li>
+</ol>
