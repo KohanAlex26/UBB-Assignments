@@ -1,0 +1,7 @@
+#Să se schimbe între ele cuvintele de pe pozițiile 1 și 3 din fișierele date ca parametri.
+#Cuvintele conțin doar litere și sunt separate prin orice alt caracter.
+for var in "$@"
+do
+    cat "$var"
+    awk 'NF >= 2{t=$3;$3=$1;$1=t};{print}' $var
+done

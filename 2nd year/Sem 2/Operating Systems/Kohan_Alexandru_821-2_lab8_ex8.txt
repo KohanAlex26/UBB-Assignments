@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define BUF_SIZE 50
+
+
+
+//Se cere sa se elimine numerele pare dintr-un fisier. Numele fisierului se va transmite programului ca si parametru in linia de comanda.
+
+
+
+int main(int argc,char* argv[])
+{
+        //read the file content word by word
+        char line[BUF_SIZE];
+
+
+        //open the file
+        FILE* fd=fopen(argv[1],"r+");
+        if(fd==NULL)
+        {
+                perror("fopen() error");
+                exit(EXIT_FAILURE);
+        }
+        FILE* fo=fopen("fisier2.txt","r+");
+        if(fo==NULL)
+        {
+                perror("fopen() error");
+                exit(EXIT_FAILURE);
+        }
+
+        printf("File: fisier.txt\n");
+
+
+        while(fgets(line, sizeof(line), fd) != NULL)
+        {
+                printf("%s",line);
+                int i=0;
+                int j=0;
+                while(line[j]!='\n')
+                {
+                        while((line[i]<'0' || line[i]>'9') && line[i] != '\n')
+                        {
+                        fputc(line[i],fo);
+                        i++;
+                        }
+                        j=i;
+                        while(line[j]!='\n' && line[j]>='0' && line[j]<='9')
+                        {
+                        j++;
+                        }
+                        if((int)line[j-1]%2==1)
+                        {
+                                for(int k=i;k<j;k++)
+                                fputc(line[k],fo);
+                        }
+                        if(line[j]=='\n')
+                                fputc('\n',fo);
+                        i=j;
+                }
+        }
+        rename("fisier2.txt",argv[1]);
+
+        //close files
+        fclose(fd);
+        fclose(fo);
+
+	FILE* fa=fopen(argv[1],"r+");
+        if(fa==NULL)
+        {
+                perror("fopen() error");
+                exit(EXIT_FAILURE);
+        }
+        while(fgets(line, sizeof(line), fa) != NULL)
+        {
+                printf("%s",line);
+        }
+
+        fclose(fa);
+
+        return 0;
+}
+

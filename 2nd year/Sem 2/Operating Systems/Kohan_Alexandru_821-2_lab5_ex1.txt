@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#Să se calculeze si afișeze login-ul și suma cifrelor din login pentru fiecare
+#utilizator din sistem care are login-ul compus dintr-o combinație alfanumerică
+
+
+finger>file1
+awk '{num=0}{num=num+substr($1,5,1)+substr($1,6,1)+substr($1,7,1)+substr($1,8,1)}{print $1 " "  num}' file1

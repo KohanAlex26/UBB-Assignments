@@ -1,0 +1,53 @@
+//Fie P un proces ce determină cmmdc a două numere. Folosind o structură adecvată de
+//astfel de procese să se scrie un program ce determină cmmdc a N numere date.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int cmmdc(int a,int b)
+{
+while(a!=b)
+  if(a>b)
+     a=a-b;
+  else
+     b=b-a;
+return a;
+}
+
+int main(int argc, char* argv[])
+{
+        int n,i,v[100],x;
+        printf("Read number of elems: ");
+        scanf("%d",&n);
+        for(i=0;i<n;i++)
+            {
+                printf("Read element %d:  ",i);
+                scanf("%d",&v[i]);
+            }
+        x=v[0];
+        int pid = fork();                       // try to create a child process
+        if (pid == -1)                          // fork() has failed
+        {
+                perror("fork() error");
+                exit(EXIT_FAILURE);
+        }
+
+        if (pid == 0)                           // in the child process
+        {
+                printf("[In CHILD] My PID is %d. My parent PID is %d.\n", getpid(), getppid());
+                //printf("%d",cmmdc(10,15));
+                for(i=1;i<n;i++)
+                x=cmmdc(x,v[i]);
+                printf("cmmdc of the numbers is %d\n",x);
+                exit(EXIT_SUCCESS);
+        }
+        else                                            // in the parent process
+        {
+                printf("[In PARENT] My PID is %d. My child PID is %d.\n", getpid(), pid);
+                int status;
+                wait(&status);
+        }
+
+        return 0;
+}

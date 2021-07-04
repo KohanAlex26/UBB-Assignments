@@ -1,0 +1,31 @@
+//Clientul ii transmite serverului un un nume de director, iar serverul ii retransmite clientului
+//numarul total de bytes din toate fisierele din directorul respectiv.
+/*
+        popen_1.c
+        Using popen() */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, char* argv[]) {
+        char cmd[50] = "du -sh ";
+        strcat(cmd,argv[1]);
+        FILE* pd = popen(cmd, "r");
+    if (pd == NULL)
+    {
+        perror("popen() error");
+        exit(EXIT_FAILURE);
+    }
+
+        char ch;
+    while ((ch = fgetc(pd)) != EOF)
+        {
+        putchar(ch);
+        }
+
+    pclose(pd);
+
+    return(0);
+}
+

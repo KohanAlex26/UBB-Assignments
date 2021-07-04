@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#Se dă un fișier cu studenții grupei ordonați în funcție de media notelor primite la sesiunea din iarna. Dându-se pentru
+#fiecare student notele la cele 5 examene din vară (în fișierul 'notevara') să se actualizeze fișierul inițial și să se afișeze
+#studenții care vor primi bursă (media peste 8.50).
+
+
+FILE=studenti.txt
+if test -f "$FILE"; then
+    rm studenti.txt
+    touch studenti.txt
+else
+    echo "$FILE does not exist."
+fi
+awk '{sum=0}{sum=sum+$3+$4+$5+$6+$7}{print $1 " " $2 " " sum/5}{a=$1}{if (sum/5>8.5) print $1 " " $2 >> "studenti.txt"}' notevara.txt

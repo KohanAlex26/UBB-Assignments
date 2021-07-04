@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#Să se scrie un script shell care primește ca parametrii un fișier cu utilizatori și un altul care 
+#conține un text oarecare. Scriptul va trimite un mail fiecărui utilizator din primul fișier, acest 
+#mail având ca și conținut textul din cel de-al doilea fișier.
+
+#Kohan_Alexandru_821-2
+
+filename=$1
+echo Start
+while read p; do
+    echo $p
+    sendmail $p <$2
+done < $filename
+
