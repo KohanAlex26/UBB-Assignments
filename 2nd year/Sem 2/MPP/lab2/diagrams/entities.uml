@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>domain.entities</OriginalElement>
+  <nodes>
+    <node x="917.0" y="1156.0">domain.validators.TrainerValidator</node>
+    <node x="395.5" y="387.0">repository.InMemoryRepository</node>
+    <node x="0.0" y="1052.0">service.SportiveService</node>
+    <node x="459.5" y="0.0">domain.entities.BaseEntity</node>
+    <node x="336.0" y="1052.0">service.TrainerService</node>
+    <node x="1113.0" y="1156.0">domain.validators.SportiveValidator</node>
+    <node x="0.0" y="642.0">service.SportiveTrainerService</node>
+    <node x="204.0" y="138.0">domain.entities.Sportive</node>
+    <node x="0.0" y="161.0">repository.Repository</node>
+    <node x="938.5" y="1052.0">domain.validators.Validator</node>
+    <node x="970.5" y="642.0">domain.exceptions.MyException</node>
+    <node x="639.0" y="127.0">domain.entities.SportiveTrainer</node>
+    <node x="657.0" y="1156.0">domain.validators.SportiveTrainerValidator</node>
+    <node x="982.5" y="0.0">ui.Console</node>
+    <node x="1342.0" y="1052.0">Main</node>
+    <node x="711.0" y="642.0">domain.enums.TrainingType</node>
+    <node x="954.0" y="790.0">domain.exceptions.ValidatorException</node>
+    <node x="435.0" y="149.0">domain.entities.Trainer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="repository.InMemoryRepository" target="domain.entities.BaseEntity">
+      <point x="60.5" y="-105.0" />
+      <point x="577.0" y="362.0" />
+      <point x="937.5" y="362.0" />
+      <point x="937.5" y="97.0" />
+      <point x="581.0" y="97.0" />
+      <point x="54.0" y="38.5" />
+    </edge>
+    <edge source="domain.exceptions.ValidatorException" target="domain.exceptions.MyException">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="49.0" />
+    </edge>
+    <edge source="domain.validators.TrainerValidator" target="domain.validators.Validator">
+      <point x="0.0" y="-27.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="domain.entities.SportiveTrainer" target="domain.entities.BaseEntity">
+      <point x="0.0" y="-105.0" />
+      <point x="783.0" y="107.0" />
+      <point x="554.0" y="107.0" />
+      <point x="27.0" y="38.5" />
+    </edge>
+    <edge source="repository.Repository" target="domain.entities.BaseEntity">
+      <point x="0.0" y="-71.0" />
+      <point x="92.0" y="97.0" />
+      <point x="473.0" y="97.0" />
+      <point x="-54.0" y="38.5" />
+    </edge>
+    <edge source="domain.validators.SportiveTrainerValidator" target="domain.validators.Validator">
+      <point x="0.0" y="-27.0" />
+      <point x="777.0" y="1131.0" />
+      <point x="960.6666666666666" y="1131.0" />
+      <point x="-44.33333333333337" y="27.0" />
+    </edge>
+    <edge source="repository.InMemoryRepository" target="repository.Repository">
+      <point x="-60.5" y="-105.0" />
+      <point x="456.0" y="362.0" />
+      <point x="92.0" y="362.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="domain.validators.SportiveValidator" target="domain.validators.Validator">
+      <point x="0.0" y="-27.0" />
+      <point x="1205.0" y="1131.0" />
+      <point x="1049.3333333333335" y="1131.0" />
+      <point x="44.33333333333337" y="27.0" />
+    </edge>
+    <edge source="domain.entities.Trainer" target="domain.entities.BaseEntity">
+      <point x="0.0" y="-83.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="domain.entities.Sportive" target="domain.entities.BaseEntity">
+      <point x="0.0" y="-94.0" />
+      <point x="309.5" y="107.0" />
+      <point x="500.0" y="107.0" />
+      <point x="-27.0" y="38.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4822908816880181" x="927.5" y="653.5" />
+  <SelectedNodes>
+    <node>domain.validators.TrainerValidator</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

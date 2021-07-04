@@ -1,0 +1,14 @@
+unnamed package
+catalog.domain
+catalog.repository
+catalog.service
+domain.entities
+domain.enums
+domain.exceptions
+domain.validators
+repository
+repository.database
+repository.file
+repository.xml
+service
+ui
