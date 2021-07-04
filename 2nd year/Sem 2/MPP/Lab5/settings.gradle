@@ -1,0 +1,5 @@
+rootProject.name = 'lab5x-ciorba-de-vacuta'
+include 'server'
+include 'common'
+include 'client'
+
