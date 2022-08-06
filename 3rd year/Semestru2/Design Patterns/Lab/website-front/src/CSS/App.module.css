@@ -1,0 +1,23 @@
+.App {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient( to right bottom, #2b7a78, #17252a 40%, #3aafa9, #17252a, #3aafa9);
+    /* background-image: URL('../Images/Background.jpg');
+    background-repeat: no-repeat;
+    background-size:cover; */
+    overflow: hidden;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.Login {
+    width:100vw;
+    height: 100vh;
+    background-image: URL('../Images/FadeBackgroundLogo.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

@@ -1,0 +1,9 @@
+In urma interactiunii intre persoana si calculator am descoperit urmatoarele metode de a imbunatatii aplicatia:
+
+1)Aplicatia ar avea nevoie de un tutorial de inceput care ar trebui sa explice ce functionalitati sunt posibile si unde se afla acestea.
+Am observat ca durat putin timp pana si-a dat seama ca aplicatia are functionalitatile sus ca si tab-uri.
+2)Am avut o functionalitate in care putea schimba data unei rezervari. Ea vazand o data default pusa acolo nu a mai schimbat nimic.
+As fi putut sa specific ca se poate schimba intr-un anumit loc.
+3)Delete-ul unei masini si update-ul ar putea fi separate in doua tab-uri pentru a stii exact care functionalitate o vei folosi.
+(Nu stia exact ce trebuie sa apese pentru delete si ce trebuie sa apese pentru update)
+4)Nu am specificat ca in ultimul tab search-ul v-a actiona doar asupra masinilor care nu sunt rezervate.(Nu stia de ce nu apar masini in tabel pentru a le sterge.)

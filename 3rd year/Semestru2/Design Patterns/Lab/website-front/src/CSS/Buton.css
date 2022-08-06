@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+
+.buton_MainPage {
+  align-items: center;
+  background-image: linear-gradient(
+    144deg,
+    var(--negru-verzui) 5%,
+    var(--lusien-deschis),
+    var(--negru-verzui) 80%,
+    var(--alb-verzui)
+  );
+  border: 0;
+  border-radius: 8px;
+  box-shadow: var(--negru-verzui) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: var(--alb-verzui);
+  display: flex;
+  font-family: "Rubik", sans-serif;
+  font-size: 23px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: none;
+  min-width: none;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  height: 2.5rem;
+  text-align: center;
+  justify-content: center;
+  padding: 0.25rem 0.188rem;
+}
+
+.buton_MainPage:active,
+.buton_MainPage:hover {
+  outline: 0;
+  box-shadow: inset;
+}
+
+.buton_MainPage span {
+  background-color: var(--negru-verzui);
+  padding: 4px 0px;
+  border-radius: 10px;
+  width: 99%;
+  height: 99%;
+  transition: 300ms;
+}
+
+.buton_MainPage:hover span {
+  background: none;
+}

@@ -1,0 +1,8 @@
+<letter> ::= "A" | "B" | ... | "Z" | "a" | "b" | ... | "z" |
+<digit> ::= "0" | "1" |...| "9"
+
+<state> ::= <letter>
+<alphabet> ::= <digit>
+<initialState> ::= <letter>
+<finalState> ::= <letter>
+<transition> ::= <letter> <digit> <letter>

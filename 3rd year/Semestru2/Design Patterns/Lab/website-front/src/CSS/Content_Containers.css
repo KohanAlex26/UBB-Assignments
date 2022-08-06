@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --negru-verzui: #17252a;
+  --verde-inchis: #1b4d4b;
+  --lusien-inchis: #2b7a78;
+  --lusien-deschis: #3aafa9;
+  --alb-verzui: #def2f1;
+  --alb-curat: #feffff;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  margin-top: 2.5rem;
+}
+
+.anunturi {
+  width: 200px;
+  height: 40px;
+  margin-left: 1.5%;
+}
+
+.iframe_links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 37.5rem;
+  margin-top: 1.875rem;
+}
+
+.links_container {
+  padding-top: 15em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.65rem;
+  height: 10rem;
+}
+
+.linkuri_utile {
+  margin-top: 15rem;
+  position: absolute;
+  right: 6%;
+  top: 12.5rem;
+  width: 570px;
+  height: 40px;
+  color: #ecede8;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "Rubik", sans-serif;
+  border-top: 6px solid black;
+  border-bottom: 6px solid black;
+}
+
+.Moodle {
+  width: 280px;
+  height: 40px;
+}
+
+.OutLook {
+  width: 280px;
+  height: 40px;
+}
+
+.FMI {
+  width: 280px;
+  height: 40px;
+}
+
+.Academic_Info {
+  width: 280px;
+  height: 40px;
+}
+
+.activitate_curenta {
+  position: absolute;
+  bottom: 31rem;
+  right: 6%;
+  width: 570px;
+  color: #ecede8;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: Phantomsans, sans-serif;
+  border-top: 6px solid black;
+  border-bottom: 6px solid black;
+}
+
+.activitate_urmatoare {
+  position: absolute;
+  bottom: 16.5rem;
+  right: 6%;
+  width: 570px;
+  height: 40px;
+  color: var(--alb-verzui);
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  font-family: Phantomsans, sans-serif;
+  border-top: 6px solid black;
+  border-bottom: 6px solid black;
+}
+
+.anunturi_content {
+  display: flex;
+  align-items: center;
+  height: 630px;
+  width: 50%;
+  background-color: black;
+  border-radius: 2rem;
+  border: 4px solid silver;
+}
+
+.anunturi_content > iframe {
+  width: 87%;
+  height: 90%;
+  margin-left: 20px;
+}
+
+.Camera {
+  margin-left: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid silver;
+  background-color: rgb(48, 45, 45);
+}
+
+.IpadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid silver;
+  background-color: black;
+}
+
+.square {
+  width: 50%;
+  height: 50%;
+  border: 1.5px solid rgb(129, 127, 127);
+  border-radius: 4px;
+}

@@ -1,0 +1,305 @@
+<!-- … --> defines a comment  
+tag names are not case sensitive
+<html> - is the root of the html document 
+<head> - contains metadata about the document,  action-scripting (see javascript), styles (see CSS) and general information referenced in the whole document
+<body> - contains the actual text of the document
+<base> - specifies a default URL (Uniform Resource Locator) and a default target for all the links on a page
+<link rel=“stylesheet” type=“text/css” href=“theme.css”>
+<body> - defines the document body which contains all the text, hyperlinks, tables, images etc.
+alink – color of an active link; rgb(x,x,x), #xxxxxx, colorname
+		bgcolor – background color; values as above
+		link – default color for unvisited link; values as above
+		text – color of the text; values as above
+		vlink – color of visited links; values as above
+		background = URL – background image
+iframe-tableta proiect colectiv
+iframe attributes:
+Attributes: align, frameborder, height, width, marginwidth, marginheight, name, scrolling, src
+<h1>..<h6> - defines headings
+h1>h2>...>h6
+<b> - bold
+<i> - italic
+<em> - emphasized text
+<strong> - strong text
+<s> - strikethrough text
+<u> - underlined text
+<del> - deleted text
+<sub> and <sup> - subscript and superscript text
+<pre> - preformatted text (text is displayed exactly as is written)
+<small> - small text
+<big> - big text
+
+<dl>
+    <dt>Name1</dt>
+    <dd>Name1 is something1</dd> 
+    <dt>Name2</dt>
+    <dd>Name2 is something2</dd> 
+    <dt>Name3</dt>
+    <dd>Name3 is something3</dd> 
+</dl>
+
+		
+	<ol>
+	   <li>Ferrari</li>
+	    <li>Audi</li>
+	    <li>BMW</li>
+	    <li>Ford</li>
+	</ol>
+
+	<ul>
+    		<li>Ferrari</li>
+		 <li>Audi</li>
+		 <li>BMW</li>
+		 <li>Ford</li>
+	</ul>
+
+select-drop-down menu
+<select>
+    <option value="ferrari">Ferrari</option>
+    <option value="audi">Audi</option>
+    <option value="bmw">BMW</option>
+    <option value="ford">Ford</option>
+</select>
+alt-in caz ca nu se incarca imaginea
+
+<table border="1">
+<tr>
+	<th>Professor</th>
+	<th>Course</th>
+	<th>Year of study</th>
+</tr>
+<tr>	
+	<td>John Boyd</td>
+	<td>Operating Systems</td>
+	<td>2</td>
+</tr>
+<tr>	
+	<td rowspan="2">Frank Black</td>
+	<td>Web Programming</td>
+	<td>3</td>
+</tr>
+<tr>	
+	<td>Computer Networks</td>
+	<td>3</td>
+</tr>
+<tr>	
+	<td>Jack O'Neil</td>
+	<td>Satellite Communications</td>
+	<td>3</td>
+</tr>
+</table>
+<script type=“text/javascript”>
+		… javascript code …
+	</script>
+
+UTF-8 (UCS Transformation Format 8) is the World Wide Web's most common character encoding. Each character is represented by one to four bytes. UTF-8 is backward-compatible with ASCII and can represent any standard Unicode character.
+
+<br> - moves to the next line
+<hr> - draws a horizontal row
+HTML 5 – focus on semantics of elements
+
+main-represents the main content of the <body> of the document
+includes content that is unique to that document and excludes data that is repeated across a set of documents (e.g. header, footer, navigational links, copyright)
+is no sectioning element
+there should be one visible main element in the document
+
+section-represents a generic section of a document
+groups thematic content
+
+
+article-represents complete, or self-contained, composition in a document
+
+figure-image + figcaption 
+
+form
+
+web communication:
+client:browser
+server:apache on google
+
+
+GET – request whatever information is identified by the Request-URL
+POST – request that server accepts the entity enclosed in the request
+OPTIONS - request for information about communication options
+PUT – request that the enclosed entity be stored under the Request-URL
+DELETE – request that the server delete the resource identified by Request-URL
+TRACE – invoke a remote, application-layer loopback of the request message
+CONNECT – used by proxies in SSL connections
+HEAD – identical to GET, but server must not return a message body in response
+
+200-ok
+
+external style sheet:
+		<head>
+		      <link rel=“stylesheet” type=“text/css” href=“style.css”>
+		</head>
+internal style sheet:
+		<head>
+			<style type=“text/css”>
+			         p { margin-left: 10px }
+			</style>
+		</head>
+inline style sheet:
+		<p style=“color: red; margin-left: 10px}
+
+
+if multiple style sheets are defined, their priority is (ascending order):
+1) browser default
+2) external style sheet
+3) internal style sheet
+4) inline style
+
+hiding an element without consuming space:
+		display: none;
+hiding an element with consuming space:
+		visibility: hidden;
+opacity-transparent
+
+static-default
+relative-static+ left/right/top/bottom
+fixed-sta tot timpul fixat in functie de pagina
+absolute-fixed in functie de parinte
+sticky-fixed+static
+
+*  	- selects everything, every tag
+
+var x = null;	// null
+var y;		// undefined
+let,const - block level
+var - global level/function level
+
+private-#
+
+getElementById
+getElementByName
+getElementsByTagName
+
+$(document).ready(function() {
+		… jquery code ..
+	});
+
+$(function() {
+		… jquery code ..
+	});
+
+$(“p”).html(“Test paragraph”);
+		$(“div#id”).remove();
+
+$( "#content" ).find( "h3" ).html( "new text for the h3!" ); 
+
+
+click for jquery- click not onclick
+
+jquery change css- $(“p”).css({color: “red”, width: “100%”, height: “100%”})
+jquery hide()
+
+
+
+
+php:
+<?php echo “first example.”; ?> - block
+
+&-refenrece
+
+var_dump($var) – prints information about $var
+
+
+These superglobal variables are:
+
+$GLOBALS
+$_SERVER
+$_GET
+$_POST
+$_FILES
+$_COOKIE
+$_SESSION
+$_REQUEST
+$_ENV
+
+
+$GLOBALS – contains references to all variables defined in the global scope of the script
+$_SERVER - array containing information such as headers, paths, and script locations; built by the web server
+$_GET - array of variables passed to the current script via the URL parameters 
+$_POST - array of variables passed to the current script via the HTTP POST method 
+$_FILES - array of items uploaded to the current script via the HTTP POST method 
+$_COOKIE - array of variables passed to the current script via HTTP Cookies 
+$_SESSION - array containing session variables available to the current script 
+$_REQUEST - array that by default contains the contents of $_GET, $_POST and $_COOKIE
+$_ENV - array of variables passed to the current script via the environment method 
+if the register_global directive is on, the variables from the superglobal arrays become available in the global scope
+
+
+$_POST["fname"];
+
+function add($x,$y) {$total=$x+$y;return $total;
+}
+
+__construct() - for constructor
+__destruct() - for destructor
+Visibility: public, protected, private (declaring with var means public visibility)
+
+php data types:
+integer, float, double: integers in decimal base, hexadecimal (prefixed by “0x”), and octal (prefixed by “0”)
+
+
+php array:
+$a = array(“a”=>45, 2=>7, 36=>”zzz”)
+
+
+accessing a component of the array by indexing it:
+	$v = array(1=>2, 2=>”zz”, vect=>array(2, 3, 4));
+	$v[2] = 45;
+	$v[‘vect’][1]=4;
+
+
+
+<?php$con = mysqli_connect("localhost", "user", "pass", "DB");
+	if (!$con) {
+     		die('Could not connect: ' . mysqli_error());
+	}
+
+	// some code
+	mysqli_close($con);
+?> 
+
+
+Convert JSON string into js object:
+var obj = JSON.parse(‘ { “name”: “ionut”, “age” : 39, “sex”: “M”} ’);
+document.write(obj.name);
+obj.age=20;
+Convert js object to JSON string:
+var obj = new Object();
+obj.name=“ionutb”;
+obj.age=25;
+obj.sex=“M”;
+var jsonString = JSON.stringify(obj);
+
+
+
+convert PHP object/associative array to JSON string:
+$arr = array(“name” => “ionut”, “age” =>39, “sex” => “M”);
+$jsonString = json_encode($arr);
+echo $jsonString;
+convert JSON string to PHP object/associative array
+$arr = json_decode($jsonString, true);
+$obj = json_decode($jsonString, false);
+
+
+AJAX ambele:
+1) $.get("showStudentsFromGroup-GET.php", 
+		      {groupid : "2" , name : “ionut”}, 
+             function(data,status) { 
+				$(“#maindiv”).html(data); 
+            });
+2) $.ajax({ 
+			type : “GET”, 
+			url : “showStudentsFromGroup-GET.php”, 
+			data: {groupid : “2” , name : “ionut"}, 
+			success: function(data,status) { 
+				$("#maindiv").html(data); 
+			} 
+    });
+
+
+
+

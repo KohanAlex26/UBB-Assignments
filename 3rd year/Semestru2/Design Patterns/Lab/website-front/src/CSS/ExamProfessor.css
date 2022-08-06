@@ -1,0 +1,112 @@
+.styled-table-exam {
+    position:fixed;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    min-width: 10em;
+    min-height: 20em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 1em;
+    width:1020px;
+    max-height: 10px;
+    /*border-collapse: collapse;*/
+    /*margin: 25px 0;*/
+    font-size: 1.8em;
+    /*font-family: sans-serif;*/
+    /*min-width: 10em;*/
+    /*min-height: 20em;*/
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);*/
+    /*text-align: center;*/
+    /*border-radius: 15px;*/
+    overflow-y:auto;
+    /*margin-top: 1em;*/
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+td {
+    /*border: 1px solid rgb(20, 3, 3);*/
+    /*background-color: #ffffff;*/
+}
+
+th {
+    /*background-image: linear-gradient( 144deg, var(--negru-verzui) 5%, var(--lusien-deschis), var(--negru-verzui) 80%, var(--alb-verzui));*/
+    /*color: #ffffff;*/
+    position: sticky;
+    top: 0;
+}
+#table-container-exam {
+    /*display: flex;*/
+    /*width: 100vw;*/
+    /*flex-direction: column;*/
+    /*column-gap: 50px;*/
+    /*padding-left: 50px;*/
+    /*padding-right: 50px;*/
+}
+.button-group-examen{
+    position: fixed;
+    text-align: center;
+    font-size: 2.4em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*right:200px;*/
+    /*bottom:50px;*/
+    top:20em;
+    left:34.5em;
+}
+.button-examen-1 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button-examen-2 {
+    background-color: #f10505;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button-examen-3 {
+    background-color: #4c68af;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: relative;
+}
+.text-field-group{
+    height:120px;
+    width: 300px;
+    background-color: white;
+    border:5px;
+    font-size:20px;
+    max-width:1200px;
+    position:fixed;
+    top:20em;
+    left:68em;
+    border-radius: 10px;
+}
+
+

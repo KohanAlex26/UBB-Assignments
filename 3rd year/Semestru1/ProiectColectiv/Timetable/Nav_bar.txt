@@ -1,0 +1,150 @@
+
+---JSX---
+import { useState } from "react";
+import '../CSS/Nav.css';
+
+export default function NavBar() {
+    const [navclass, setnavclass] = useState('');
+    const [burgerclass, setburgerclass] = useState('');
+    const [navlinkclass, setnavlinkclass] = useState('');
+
+    const handleclick = () => {
+        setnavclass(navclass === '' ? "nav-open" : '');
+        setburgerclass(burgerclass === '' ? "burger-open" : '');
+        setnavlinkclass(navlinkclass === '' ? "nav-link-open" : '');
+    };
+    
+    return (
+        <>
+        < div className = {`burger ${burgerclass}`} onClick = { handleclick }>
+         <i className="fas fa-bars fa-2x"></i>
+         <i className="fas fa-times fa-2x"></i>
+       </div >
+
+    <nav className={`navbar ${navclass}`}>
+        <ul className="nav-links">
+            <li className={`nav-link ${navlinkclass}`}><a href="#">CStudent</a></li>
+            <li className={`nav-link ${navlinkclass}`}><a href="#">Orar</a></li>
+            <li className={`nav-link ${navlinkclass}`}><a href="#">Prezente</a></li>
+            <li className={`nav-link ${navlinkclass}`}><a href="#">Examene</a></li>
+            <li className={`nav-link ${navlinkclass}`}><a href="#">Camin</a></li>
+        </ul>
+    </nav>
+    </>
+    )
+}
+
+---CSS---
+ @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+.navbar .nav-links li:nth-of-type(5), .navbar .nav-links li:nth-of-type(4), .navbar .nav-links li:nth-of-type(3), .navbar .nav-links li:nth-of-type(2), .navbar .nav-links li:nth-of-type(1) {
+  opacity: 0;
+  transition: 0.3s ease-in all;
+}
+
+.navbar .nav-links li:nth-of-type(5).nav-link-open, .navbar .nav-links li:nth-of-type(4).nav-link-open, .navbar .nav-links li:nth-of-type(3).nav-link-open, .navbar .nav-links li:nth-of-type(2).nav-link-open, .navbar .nav-links li:nth-of-type(1).nav-link-open {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.navbar .nav-links li a::after, .navbar .nav-links li a::before {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 0%;
+  background-color: #2a3255;
+  left: 0;
+  border-radius: 2px;
+  transition: 0.3s ease all;
+}
+
+.burger {
+  position: absolute;
+  top: 45px;
+  right: 35px;
+  color: #23f0ff;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  transform: scale(1.2);
+}
+.burger i:nth-of-type(1) {
+  display: block;
+}
+.burger i:nth-of-type(2) {
+  display: none;
+}
+.burger.burger-open {
+  color: #ECEDE8;
+}
+.burger.burger-open i:nth-of-type(1) {
+  display: none;
+}
+.burger.burger-open i:nth-of-type(2) {
+  display: block;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  right:0;
+  height: 160px;
+  width: 70%;
+  background-image: linear-gradient(to left,#19b3be,#a75e9d 60%);
+  clip-path: circle(0px at 100% 0px);
+  transition: 0.5s ease all;
+transform: translateX(1%);
+}
+.navbar .nav-links {
+  display: flex;
+  justify-content: space-around;
+  width:100%;
+}
+.navbar .nav-links li {
+  list-style-type: none;
+  margin: 3rem 0;
+}
+.navbar .nav-links li:nth-of-type(1).nav-link-open {
+  transition-delay: 0.25s;
+}
+.navbar .nav-links li:nth-of-type(2).nav-link-open {
+  transition-delay: 0.35s;
+}
+.navbar .nav-links li:nth-of-type(3).nav-link-open {
+  transition-delay: 0.45s;
+}
+.navbar .nav-links li:nth-of-type(4).nav-link-open {
+  transition-delay: 0.55s;
+}
+.navbar .nav-links li:nth-of-type(5).nav-link-open {
+  transition-delay: 0.65s;
+}
+.navbar .nav-links li a {
+  text-decoration: none;
+  color: #ECEDE8;
+  font-size: 1.5rem;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.navbar .nav-links li a::before {
+  top: -2px;
+}
+.navbar .nav-links li a::after {
+  bottom: -5px;
+}
+.navbar .nav-links li a:hover::before {
+  width: 100%;
+}
+.navbar .nav-links li a:hover::after {
+  width: 100%;
+}
+.nav-open {
+  display: block;
+  clip-path:circle(70%);
+}
+

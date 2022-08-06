@@ -1,0 +1,25 @@
+body {
+  background-image: linear-gradient(rgba(124, 14, 14, 0.75), rgba(26, 61, 41, 0.75)),
+    url(Images/music.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 20px;
+    color: white;
+  }
+
+
+  .myDiv {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 3px solid white;
+  }
+
+  hr{
+    background-color: white;
+    height: 3px; 
+    border: 0;
+  }

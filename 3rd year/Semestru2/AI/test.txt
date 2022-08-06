@@ -1,0 +1,4 @@
+perceptron:
+at least one line that would linearly separate our data
+nu(learning rate)-how fast the perceptron algorithm converges to this line that separate the classes
+nu high-error risk but faster

@@ -1,0 +1,98 @@
+1) perceptronul
+cand? -> il folosim in probleme de clasificare binara
+	\    +
+      -  \ +  + +
+   -   -  \ + + +
+    - - -  \
+    ^
+    |
+  (x1,xy)
+
+= w1x1+w2x2+bias   (ax+by+c) -> x=x1 y=x2 c=bias
+bias e translatia cat de la stanga sau dreapta e dreapta
+
+XOR nu e liniar separabila
+0^0=0
+1^0=1
+0^1=1
+1^1=0
+    Nu exista linie sa le separe pe astea
+
+
+2) retea neuronala
+
+3 layers
+
+O O O } FULLY CONNECTED
+ O O  }
+
+cand folosim?
+in probleme de clasificare
+
+exemplu detectare de cifre
+aveam o matrice de pixeli de 8x8
+si aveai 255 valoarea in pixelii care aveau culoarea alba si in rest 0 ca sa formeze o cifra
+cati neuroni de input trebuie sa am?
+reteaua are un layer flat de neuroni 0 0 0 0 0 0 0 0
+facem flatten la matrice
+[]
+[]
+luam coloana de jos si o concatenam mai sus
+si repetam pentru toate randurile
+si optinem o linie de 64 de elemente deci 64 de elemente(neuroni) de input
+cati hidden? aprox 100 dar dupa gust in general
+si cati neuroni de output? 10 -ca 10 cifre
+retelele au valori intre [0,1]
+cum le aducem in intervalul ala? (v-vmin)/(vmax-vmin)
+la noi o sa fie (v-0)/(255-0)
+
+output cifra 4 se encoda intr un vector de lungime 10 unde era valoarea 1 pe pozitia 5
+( 0 0 0 0 1 0 0 0 0 0)
+          ^
+        (0,25 0,4 0,78 ...)
+se face o predictie iar numarul (0,1)  sa fie apropiat de 1
+N epoci
+	s ori
+o epoca inseamna parcursul datelor de antrenament
+
+
+3)Algoritmi genetici
+cand? probleme de minim sau maxim cand spatiul solutiilor este foarte mare
+deobicei se folosesc pentru complete NP-complete adica nu exista alg pol
+->pornim direct cu solutia
+avem entitatea numita chromosome <=> solutie
+acest chromosome are asociata o functie de fitness:R^n->R
+acesti algoritmi au un tradeoff
+facem backtracking si gasim cea mai buna dar dureaza foarte mult
+acesti algoritmi genetici sunt intre brute force si random search
+
+daca ai un grafic cu minim local si minim global punctul din minimul local
+trebuie sa vrea sa exploreze alte gropi pentru a gasi cel global
+
+EXPLOITATION  -> SELECTION
+EXPLORATION   -> MUTATIE & CROSSOVER -> introduce new gen material
+for epoch in EPOCHS
+|MUT&CROSSOVER
+|SORT BY FITNESS
+|SELECTION
+-
+RETURN POP[0]
+
+
+MUTATIE(c)->offspring (primeste ca param un chromosom si returneaza un offspring)
+la CROSSOVER(c1,c2)->o1,o2 avem 2 chromosomi si 2 offsprings returnati
+un exemplu de crossover 
+0 1 0 1 1 0 0
+1 1 1 1 0 1 0
+prima bucata din primul se concateneaza cu ultima din a doua
+si a doua din primu cu prima din a doua
+pentru a introduce element genetic nou
+
+4) PARTICLE SWARM OPTIMIZATION
+cand? determinare minimului sau maximului unei functii  continue pe un interval [i1,i2]
+f(x,y)=x^2+y^2 -> minimize -> are minim in (0,0)
+      =x^2-y^2 ->asta nu are minim, asta e saddle point ala de mai sus arata ca un U in 3d
+
+
+Astazi recunoastere de fete
+

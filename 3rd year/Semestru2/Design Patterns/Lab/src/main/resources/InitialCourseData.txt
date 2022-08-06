@@ -1,0 +1,219 @@
+MME8120;Adaptive Web Design
+MLM0020;Algebra
+MLR0020;Algebra
+MLE0020;Algebra
+MLM0019;Algebra 1 (Algebra liniara)
+MLR0019;Algebra 1 (Algebra liniara)
+MLE0019;Algebra 1 (Algebra liniara)
+MME3112;Algebra omologica
+MLM0065;Algoritmi de optimizare
+MLM5104;Algoritmi fundamentali
+MLM5108;Algoritmi si programare
+MLR5115;Algoritmi si Programare
+MLE5115;Algoritmi si Programare
+MLM0008;Analiza complexa
+MLR0008;Analiza complexa
+MLE0008;Analiza complexa
+MLR0004;Analiza functionala
+MLM0004;Analiza functionala
+MME3005;Analiza functionala aplicata (lb. de predare engleza)
+MLE0002;Analiza matematica
+MLR0002;Analiza matematica
+MLM0002;Analiza matematica
+MLR0001;Analiza matematica 1 (Analiza pe R)
+MLM0001;Analiza matematica 1 (Analiza pe R)
+MLE0001;Analiza matematica 1 (Analiza pe R)
+MLM0007;Analiza matematica 3 (Calcul integral in R^n)
+MMG9701;Antrepenoriat in IT
+MME8148;Antreprenoriat in IT
+MLR0044;Aplicatii ale geometriei in informatica
+MME8063;Aplicatii ale inteligentei computationale in ingineria soft
+MME8062;Aplicatii ale lingvisticii computationale
+MLE5153;Arhitectura aplicatiilor cloud
+MLR5004;Arhitectura sistemelor de calcul
+MLG5004;Arhitectura sistemelor de calcul
+MLM5004;Arhitectura sistemelor de calcul
+MLE5004;Arhitectura sistemelor de calcul
+MME8027;Arhitecturi orientate pe servicii
+MME3051;Aritmetica modulara si criptografie
+MMM3090;Aspecte metodice in analiza elementara II
+MDM3201;Aspecte metodice in predarea algoritmilor
+MDM3202;Aspecte metodice in predarea limbajelor de programare
+MLR0024;Astronomie
+MLM0024;Astronomie
+MLE5147;Automatizarea proceselor de business
+MLE5027;Baze de date
+MLR5027;Baze de date
+MLG5027;Baze de date
+MLM5027;Baze de date
+MLE5150;Calcul afectiv
+MLG0077;Calcul diferential si integral
+MLM0028;Calcul numeric
+MMR8057;Capitole avansate de baze de date
+FRM0001;Cerc de programare in C
+MDM5002;Cercetare educationala II
+MMG8156;Cicluri de viata ale sistemelor software
+MLR0046;Complemente de algebra
+MLM3128;Complemente de geometrie sintetica
+MLE5152;Computer vision si deep learning
+MMR8030;Computer Vision si procesare avansata de imagini in medii virtuale distribuite
+MDM1011;Comunicare eficienta si managementul emotiilor
+MLR7005;Comunicare si dezvoltare profesionala in informatica
+MME8150;Concepte avansate de testare
+MMM3033;Constructii geometrice
+MLE0949;Criptografie cu cheie publica
+PMM5103;Curriculum scolar si dezvoltare curriculara
+MMR8056;Data mining
+MME8072;Dezvoltarea aplicatiilor mobile (in engleza)
+MLM7021;Dezvoltarea competentelor personale
+MLM0011;Ecuatii cu derivate partiale
+MLE0011;Ecuatii cu derivate partiale
+MLR0011;Ecuatii cu derivate partiale
+MLM0009;Ecuatii diferentiale
+MLE0009;Ecuatii diferentiale
+MLR0009;Ecuatii diferentiale
+MDM1004;Etica si integritate academica
+MME3150;Etica si integritate academica. Metodologia cercetarii stiintifice
+MMR3150;Etica si integritate academica. Metodologia cercetarii stiintifice
+MMG3150;Etica si integritate academica. Metodologia cercetarii stiintifice
+PMM5312;Evaluare si testare in educatie
+MLG0058;Fundamentele algebrice ale informaticii
+MLG5005;Fundamentele programarii
+MLM5107;Fundamentele programarii
+MLR5005;Fundamentele programarii
+MLE5005;Fundamentele programarii
+MLR0013;Geometrie 1 (Geometrie analitica)
+MLE0013;Geometrie 1 (Geometrie analitica)
+MLM0013;Geometrie 1 (Geometrie analitica)
+MLR0016;Geometrie 3 (Geometria diferentiala a curbelor si suprafetelor)
+MLM0016;Geometrie 3 (Geometria diferentiala a curbelor si suprafetelor)
+MME8037;Implementarea sistemelor de gestiune a bazelor de date
+MME8025;Ingineria cerintelor
+MLM5011;Ingineria sistemelor soft
+MMM3057;Instruire asistata de calculator
+MMR3057;Instruire asistata de calculator
+MME3057;Instruire asistata de calculator (lb. de predare engleza)
+MME8042;Instruire automata
+MLR5044;Instrumente CASE
+MMR8159;Instrumente inteligente pentru bunastarea sociala
+MLR5048;Interactiunea om-calculator
+MME8173;Internetul obiectelor
+MLM5085;Introducere in criptografie
+MLG5119;Introducere in programare
+MLE5154;Introducere in robotica
+MMG8999;Introducere in SAP/ABAP
+MLG5118;Introducere in tehnologii ERP
+LLU0011;Limba engleza (1)
+MLE5023;Limbaje formale si tehnici de compilare
+MLR5023;Limbaje formale si tehnici de compilare
+MLM5023;Limbaje formale si tehnici de compilare
+MLG5023;Limbaje formale si tehnici de compilare
+MLE5055;Logica computationala
+MLG5055;Logica computationala
+MLR5055;Logica computationala
+MLM0023;Logica matematica
+MLM5103;Logica matematica si computationala
+MLE0070;Logica matematica si teoria multimilor
+MLR0070;Logica matematica si teoria multimilor
+MMG8153;Managementul fluxului de operatii
+MMM8061;Managementul proiectelor enterprise
+MLM0018;Matematica de baza
+MLR0018;Matematica de baza
+MLM5013;Medii de proiectare si programare
+MDM1012;Medii virtuale de invatare
+MMM8062;Metode agile si strategii de dezvoltare enterprise
+MME8048;Metode avansate de analiza datelor
+MMM8145;Metode avansate de gestionarea datelor
+MLE5008;Metode avansate de programare
+MLM5008;Metode avansate de programare
+MLG5008;Metode avansate de programare
+MLR5008;Metode avansate de programare
+MLM5135;Metode avansate de rezolvare a problemelor de informatica
+MLM3125;Metode avansate de rezolvare a problemelor de matematica
+XND2306;Metode de rezolvare a problemelor de matematică
+MME8005;Metode formale in programare
+MLR5067;Metode inteligente de rezolvare a problemelor reale
+MME3104;Metode matematice in mecanica fluidelor
+MLR0073;Metode numerice cu aplicatii
+MME8088;Metode statistice computationale
+MDM3004;Metodologia rezolvarii problemelor de matematica
+MME8143;Metodologii Agile de dezvoltare a aplicatiilor software
+MMG8143;Metodologii agile de dezvoltare a aplicatiilor software
+MMM8066;Metrici software si managementul calitatii
+MMM8079;Modelare Monte Carlo si aplicatii
+MME8172;Modelare numerica in analiza datelor
+MME8094;Modelarea formala a proceselor concurente
+MLG5077;Modelarea integrata a sistemelor informatice complexe
+MME8026;Modele de calcul pentru sisteme embedded
+MME3007;Modele de optimizare
+MMR8002;Modele formale de concurenta si comunicatii
+MME3403;Optimizare vectoriala
+MME8028;Paradigme de programare
+MLM7001;Practica
+MLR2031;Practica de specialitate in matematica
+VDP3506M;Practica pedagogica in invatamantul preuniversitar obligatoriu (1)
+VDP3506;Practica pedagogica observativa
+MLR5158;Principiile retelelor de calculatoare
+MLR0031;Probabilitati si statistica
+MLE0031;Probabilitati si statistica
+MLG0031;Probabilitati si statistica
+MLM0031;Probabilitati si statistica
+MME8158;Procesare si aplicatii Big Data
+MLE8117;Procesarea datelor audio-video
+MME8060;Programare declarativa in invatarea automata
+MLR5076;Programare in C
+MLG5143;Programare logica
+MLR5009;Programare logica si functionala
+MLE5009;Programare logica si functionala
+MLM5009;Programare logica si functionala
+MLE5077;Programare paralela si distribuita
+MLM5106;Programare paralela si distribuita
+MLR5077;Programare paralela si distribuita
+MME8111;Programare pe arhitecturi GPU si distribuite
+MLG5078;Programare pentru dispozitive mobile
+MLR5078;Programare pentru dispozitive mobile
+MLE5078;Programare pentru dispozitive mobile
+MMM8085;Programarea robotilor si a sistemelor inglobate
+MLM5012;Proiect colectiv
+MLR5012;Proiect colectiv
+MLE5012;Proiect colectiv
+MLG5012;Proiect colectiv
+MLR5161;Proiect de cercetare
+MLE5161;Proiect de cercetare
+MMM8144;Proiectarea bazata pe sabloane si componente
+VDP0001;Psihologie educationala (facultativ)
+MLE5061;Realitate virtuala
+MME8032;Regasirea informatiei (in engleza)
+MLG5002;Retele de calculatoare
+MLR5002;Retele de calculatoare
+MLE5002;Retele de calculatoare
+MMR8015;Retele dinamice si sisteme de operare specializate
+MMR3013;Rolul contraexemplelor in predarea analizei matematice
+MLM5086;Securitate software
+MLR8114;Securitate software
+MMM8018;Securitatea sistemelor de calcul
+MMG8157;Securitatea sistemelor software
+MME3125;Siruri recurente (lb. de predare engleza)
+MME8093;Sisteme de operare pentru arhitecturi paralele si distribuite
+MME8009;Sisteme pentru fundamentarea deciziilor
+MLR0026;Software matematic
+MLM0026;Software mathematic
+MLE0030;Statistica matematica
+MLM0030;Statistica matematica
+MLR0030;Statistica matematica
+MMM8177;Swarm Intelligence
+MLM0083;Tehnici de demonstrare
+MMR8012;Tehnologii si platforme Java pentru aplicatii distribuite
+MMR3046;Teme de algebra I (pentru perfectionarea profesorilor)
+MMR3008;Teme de analiza matematica I (pentru perfectionarea profesorilor)
+MMR3022;Teme de calcul numeric si aproximare (pentru perfectionarea profesorilor)
+MMR3035;Teme de geometrie II (pentru perfectionarea profesorilor)
+MMR3029;Teme de matematica aplicata (pentru perfectionarea profesorilor)
+MMR3055;Teme de mecanica si astronomie (pentru perfectionarea profesorilor)
+MME3109;Teoria calitativa a ecuatiilor diferentiale ordinare
+MMM3050;Teoria codurilor
+MME3103;Teoria grupurilor si aplicatii
+VDP2303;Teoria si metodologia instruirii. Teoria si metodologia evaluarii
+MLR0082;Topologie
+MME3111;Topologie algebrica
+TUTOR;Tutoriat

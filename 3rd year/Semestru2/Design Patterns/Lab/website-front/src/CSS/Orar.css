@@ -1,0 +1,248 @@
+  .App-header {
+      width: 100%;
+      position: fixed;
+      padding: 5em;
+      color: #fff;
+      top: 0;
+      background-color: #003a63;
+      color: white;
+  }
+  
+  #Cs-logo {
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      height: 9em;
+      position: fixed;
+      margin-left: 1em;
+      margin-top: 0.3em;
+  }
+  
+  #Faculty-label {
+      pointer-events: none;
+      font-size: 1.9em;
+      top: 0;
+      left: 0;
+      position: fixed;
+      margin-left: 13em;
+      margin-top: 1em;
+  }
+  
+  #University-label {
+      pointer-events: none;
+      font-size: 1.4em;
+      top: 0;
+      left: 0;
+      position: fixed;
+      margin-left: 22.1em;
+      margin-top: 4.1em;
+  }
+  
+  button {
+      border-radius: 40em;
+      color: #003a63;
+      font-weight: bold;
+  }
+  
+  #CStudent-home-button {
+      height: 8.4em;
+      width: 12em;
+      top: 0;
+      left: 0;
+      background-color: #ffcc00;
+      position: fixed;
+      margin-left: 143em;
+      margin-top: 1.7em;
+  }
+  
+  #Orar-button {
+      height: 4em;
+      width: 10em;
+      top: 0;
+      left: 0;
+      position: fixed;
+      margin-left: 157em;
+      margin-top: 1.7em;
+  }
+  
+  #Examene-button {
+      height: 4em;
+      width: 10em;
+      top: 0;
+      left: 0;
+      position: fixed;
+      margin-left: 157em;
+      margin-top: 6.2em;
+  }
+  
+  #Harta-button {
+      height: 4em;
+      width: 10em;
+      top: 0;
+      left: 0;
+      position: fixed;
+      margin-left: 168em;
+      margin-top: 1.7em;
+  }
+  
+  #Camera-mea-button {
+      height: 4em;
+      width: 10em;
+      top: 0;
+      left: 0;
+      position: fixed;
+      margin-left: 168em;
+      margin-top: 6.2em;
+  }
+  
+  #Cont-button {
+      height: 8.4em;
+      width: 8.4em;
+      top: 0;
+      left: 0;
+      position: fixed;
+      margin-left: 180em;
+      margin-top: 1.7em;
+      border-radius: 50%;
+  }
+  
+  .styled-table {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 2.0em;
+      font-family: sans-serif;
+      min-width: 10em;
+      max-width: 10em;
+      min-height: 0em;
+      max-height: 0em;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-top: 1em;
+  }
+  
+  td {
+      border: 1px solid rgb(20, 3, 3);
+      background-color: #ffffff;
+  }
+  
+  th {
+      background-image: linear-gradient( 144deg, var(--negru-verzui) 5%, var(--lusien-deschis), var(--negru-verzui) 80%, var(--alb-verzui));
+      color: #ffffff;
+  }
+  
+  .td-yellow {
+      background-color: #ffd966;
+  }
+  
+  .td-green {
+      background-color: #93c47d;
+  }
+  
+  .luni-table {
+      position: fixed;
+      margin-left: 1em;
+  }
+  
+  .marti-table {
+      position: fixed;
+      margin-left: 13em;
+  }
+  
+  .miercuri-table {
+      position: fixed;
+      margin-left: 25em;
+  }
+  
+  .joi-table {
+      position: fixed;
+      margin-left: 37em;
+  }
+  
+  .vineri-table {
+      position: fixed;
+      margin-left: 49em;
+  }
+  
+  #Legenda-div {
+      position: fixed;
+      margin-top: 44em;
+      margin-left: 33.75em;
+      vertical-align: middle;
+  }
+  
+  #Legenda-label {
+      color: #ffffff;
+      width: 6.5em;
+      display: inline-block;
+      height: 1.3em;
+      border-radius: 2em 0 0 2em;
+      background-image: linear-gradient( 144deg, var(--negru-verzui) 5%, var(--lusien-deschis), var(--negru-verzui) 80%, var(--alb-verzui));
+      font-size: 2em;
+      text-align: center;
+  }
+  
+  #Curs-label {
+      color: #000000;
+      width: 6.5em;
+      display: inline-block;
+      height: 1.3em;
+      background-color: #ffffff;
+      font-size: 2em;
+      text-align: center;
+  }
+  
+  #Seminar-label {
+      color: #000000;
+      width: 6.5em;
+      display: inline-block;
+      height: 1.3em;
+      background-color: #ffffff;
+      font-size: 2em;
+      text-align: center;
+  }
+  
+  #Laborator-label {
+      color: #000000;
+      width: 6.5em;
+      display: inline-block;
+      height: 1.3em;
+      border-radius: 0 2em 2em 0;
+      background-color: #ffffff;
+      font-size: 2em;
+      text-align: center;
+  }
+  
+  #Red-dot {
+      height: 25px;
+      width: 25px;
+      background-color: #e06666;
+      border-radius: 50%;
+      display: inline-block;
+  }
+  
+  #Green-dot {
+      height: 25px;
+      width: 25px;
+      background-color: #93c47d;
+      border-radius: 50%;
+      display: inline-block;
+  }
+  
+  #Yellow-dot {
+      height: 25px;
+      width: 25px;
+      background-color: #ffd966;
+      border-radius: 50%;
+      display: inline-block;
+  }
+
+  #table-container {
+      display: flex;
+      width: 100vw;
+      flex-direction: row;
+      column-gap: 50px;
+      padding-left: 50px;
+  }
+

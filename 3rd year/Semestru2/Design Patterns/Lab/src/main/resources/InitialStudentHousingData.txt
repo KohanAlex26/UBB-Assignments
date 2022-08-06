@@ -1,0 +1,16 @@
+Str. B.P.Haşdeu nr. 90-92;46.7632915_23.5780777;Camin A1-A2;10;10;
+Str. B.P.Haşdeu nr. 90-92;46.7632915_23.5780777;Camin A3-A4;10;10;
+Str. B.P.Haşdeu nr. 90-92;46.7632915_23.5780777;Camin 16;10;10;
+Str. B.P.Haşdeu nr. 90-92;46.7632915_23.5780777;Camin 17;10;10;
+Str. B.P.Haşdeu nr.45;46.7621267_23.5796407;Caminul 1;10;10;
+Str. B.P.Haşdeu nr.45;46.7621267_23.5796407;Caminul 2;10;10;
+Str. B.P.Haşdeu nr.45;46.7621267_23.5796407;Caminul 3;10;10;
+Str. B.P.Haşdeu nr.45;46.7621267_23.5796407;Caminul 4;10;10;
+Str. B.P.Haşdeu nr.45;46.7621267_23.5796407;Caminul 5;10;10;
+Str. B.P.Haşdeu nr.45;46.7621267_23.5796407;Caminul 6;10;10;
+Str. B.P.Haşdeu nr.45;46.7621267_23.5796407;Caminul 14;10;10;
+Str. Teodor Mihali nr.58;46.7742773_23.6188533;Economica 1;10;10;
+Str. Teodor Mihali nr.59;46.7749468_23.6195325;Economica 2;10;10;
+Str. Pandurilor nr. 7;46.7657208_23.560499;Sport XXI;10;10;
+Str. Bisericii Sf.Toma nr.2;46.7769331_23.6154312;Teologic 1;10;10;
+Str. Pandurilor nr. 7;46.7657208_23.560499;Complex Parc Sportiv "Iuliu Hatieganu";10;10;

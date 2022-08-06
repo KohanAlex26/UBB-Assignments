@@ -1,0 +1,9 @@
+1.PDE Models
+2.Solving PDEs
+3.Linear PDEs & F
+7.BVPs 1 
+8.BVPs 2
+10.only last page= list of models that can be treated by this aproach
+11.Reaction diffusion 1
+(wrong numbering in notes)
+12.Reaction diffusion 2

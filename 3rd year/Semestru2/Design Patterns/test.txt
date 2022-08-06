@@ -1,0 +1,107 @@
+creational:
+factory:decouple creation of subclasses objects from client code
+-an interface with a function that is implemented in our subclasses
+-using factory design pattern it is a lot easier to extend set of current subclasses
+-eg. transport interface and truck/ship classes
+
+abstract factory:
+-multiple factories and factory generator
+-an interface with a function that is implemented in our subclasses
+-eg. shape interface with classes empty circle, empty square, filled circle, filled square, empty factory, filled factory and abtract factory, factory generator
+-eg. multiple types of sofa/chair and table
+
+builder:reduces complexity of creating object with a lot of attributes
+-we need a class with a lot of variables
+-instead of having an infinity of constructors is better to have setAttribute functions for every attribute and then return the built object
+
+prototype:makes deep or shallow copies of existing objects
+-copies all original objects's attributes when creating new objects can be costly
+-prototype class offers a clone method
+-for imutable types of attrbitues we use shallow copy because we can share among multiple instances(string is imutable for example)
+-eg. robot class with robot parts as attributes, client makes a clone out of it(deep copy on every attribute) and asseble it into a robot clone,
+class robot implements clonable with a list of robotparts and a clone method
+
+singleton:only one object of a class is created in whole application
+-private static variable
+-private constructor
+-public static synchronized getInstance
+
+
+structural:
+adapter:allows objects with incompatible interfaces to collaborate
+-we use adapter when a class 
+-eg. a memory card interface and a latop interface need an card reader that will be the adapter between the intefaces,
+you plug in memory card in the card reader and the card reader into the laptop so the laptop can read the memory card
+-eg. another example can be downloading stock market data in xml format and then displaying diagrams for the user.
+at some point you will need json format to analyze the data. So you will need an adapter to make xml to colaborate with json
+-eg. same for socket type in different countries(europe vs america)
+
+bridge:lets you split a large class of closely related classes into two separate hierarchies
+-eg. you have a shape class as an interface and classes circle and square. The circles and squares can be red and blue. So we'll 
+need 4 class cominations. Here comes the bridge pattern where the shape class gets a reference to one of the color objects which acts as a bridge.
+
+composite:compose objects into tree structures and then work with these structures as they were individual objects
+-eg. a package delievered by fedex can be a box containing multiple products and even more boxes inside. Those boxes can also contain products and so on.
+
+decorator:lets you attach new behaviors to objects by placing these objects inside special wrapper objects that containt the behaviors
+-we'll need a notifier interface, a base decorator implementing that interface and multiple decorators as subclasses
+-eg. notifier class with a send method that notifies all emails in a list. at some point you want more than just email notifications, like facebook notifier or slack notifier
+
+facade:provides a simplified interface to a library, framework or other complex set of classes
+-typically you'll have a method that encapsulates multiple functionalities
+-eg. imagine working with a broad set of objects that belong to a sophisticated library. ordinarily, you'd need to initialize all those objects, keep track of dependecies, execute methods in correct order.
+as a result business logic of your classes would become coupled to the implementation details.
+
+flyweight:lets you fit more objects into the available amount of RAM by sharing common parts between multiple objects instead of keeping all data in a single object
+-eg. in a shooting game you will need bullets. A lot of bullets will be created in a game. The number of bullets will no longer fit into the remaining RAM so the program will crash. 
+Bullets have the same color and sprite so we dont need to store that in the object.
+
+proxy: lets you provide a subsitute or placeholder for another object. a proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.
+-eg. download youtube video(dont download multiple times)
+
+
+
+behavioral:
+chain of responsability:pass requests along a chain of handlers.upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.
+-has a group of objects that should solve a problem. if the first object can't solve the problem it passes the data to the next object in the chain.
+-an object oriented linked list with recursive traversal
+-each derived class implements its contribution for handling the request
+-if the requests need to be passed on, then the derived class "calls back" to the base class, which delegates to the next pointer.
+-eg. ATM(state machine)
+
+command:encapsulates a request as an object that contains all information about a request
+-this lets you pass a request as method arguments, delay or queue request's execution and support undoable operations
+-eg. order at a restaurant. The paper order serves as a command.It remains in queue until it is served. The order contains all relevant information and helps the chef about the order details instead of clarifying the details from you.
+
+iterator:lets you traverse a collection of elements wihtout exposing its underlying representation(list,stack,tree)
+-use it when your collection has a complex data struture under the hood but you want to hide its complexity from clients(for convenience or security)
+
+mediator:lets you reduce the chaotic dependencies betwenen the objects. Restricts direct communication between the objects and forces them to collaborate only via a mediator.
+-eg. pilots of aircraft that apporach or depart the airport control area don't communicate directly with each other. There is an air traffic controller. Without that pilots would need to be aware of every plane and discurss priorities.
+
+memento:lets you save and restore the previos state of an object without revealing the details of its implementation
+-editor class with makesnapshot method, snapshot with all fields of the editor, original editor and restore method, and command class with a snapshot and an editor to backup and undo
+
+observer: lets you define a subscribtion mechanism to notify multiple objects about any events that happen to the object they're observing
+-publisher and subscribers, publisher has a list of subscribers and notify method, subscribers have an update method
+-eg. subscribtion to certain shops when you recieve mails, for example for shoes
+
+state:lets an object alter its behavior when its internal state changes. It appears as if the object changed its class.
+-the object behave differently depending on the current state
+-eg. when the phone is unloked/locked/phone's charge is low, pressing any button will have different effect.
+-eg. publishing an article can be in different states(draft/moderation/published)
+
+strategy:lets you define a family of algorithms, put each of them into a separate class and make their objects interchangeable
+-eg. imagine you need to get to an airport. you can catch a bus, order uber, or get the bicycle. these are transportation strategies. you can pick one of the strategies depending od varios factors.
+
+template method:lets you define the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its strucuture.
+-eg. mass housing construction. The arhitectural plan for building a standard house may contain several extension. Each step like building wealls, wiring for water and electricity, laying foundation can be slightly different.
+
+visitor:lets you separate algorithms from the objects they operate. gives responsability to other objects.
+-eg. insurance agent who wants customers offers specialized insurancee policies: if it is a residential building, he sells medical insurance. if it is a bank he sells theft insurance. if it is a coffe shops he sells fire and flood(inundatie) insurance.
+-eg. Taxi company dispatcher accepts a visitor, the client. The client enters the taxi so there is a visit relation.
+
+
+memento-ctrl+f(resore/savestate)
+flyweight-230
+abstract factory-53

@@ -1,0 +1,27 @@
+algoritmi genetici:
+cand? -> prboleme de minim/maxim
+cand spatiul solutiilor este foarte mare
+probleme incomplete
+pornim direct cu solutii
+chromosome<=>solutie
+fitness:r^n->r
+la mijloc de random search si brute force exploration
+exploitation->selection
+exploration-> mutatie & crossover(introduce material genetic nou)
+mutatie(c)->offspring
+
+010110111->crossover (c1,c2)->
+for epoch in epochs
+MUT & CROSSOVER
+Sort by fitness
+SELECTION
+0101100
+1111010
+return pop[0]
+
+
+PSO:
+Cand? Det minimului sau maximului unei functii continue pe [i1,i2]
+f(x,y)=x^2+y^2->minimize->(0,0)
+       x^2-y^2->saddle point
+f:r^n->r x,y,z=f(x,y)

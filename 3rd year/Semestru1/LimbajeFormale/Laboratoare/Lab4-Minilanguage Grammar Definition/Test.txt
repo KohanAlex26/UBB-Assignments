@@ -1,0 +1,95 @@
+G=(N,T,P,S)
+N={C,Y,D,N,M,L,I,P,B,R,W,V,Q,U,H,S2,S1,A,G,K,E,T,F,F2,F1,J,I1,W1,C1,R1}
+T={0,1,...,9,a,...,z,_,VAR,FOR,WHILE,IF,DO,BEGIN,END,;,:,[,],INTEGER,DOUBLE,BOOLEAN,CHAR,DOUBLE,=,==,<=,>=,<>,+,-,*,/,%,(,),>,<}
+S={P}
+P={
+(String)
+A -> BA | B | ε
+
+(Char)
+B -> F | D | _
+
+(Integer)
+C -> 1 | 2 | ... | 9
+D -> 0 | 1 | 2 | ... | 9
+E -> C | 0 | ED
+
+(Letter)
+F -> a | b | ... | z
+
+(IDENTIFIER)
+G -> FG | _G | GD | F
+
+(Program)
+H -> S
+
+(Decllist)
+I -> J | J ; I			
+
+(Declaration)
+J -> G : L			
+
+(ArraySelect)
+K -> G [ P ]			
+
+(Type)
+L -> O | M			
+
+(arraydecl) 
+M -> O ARRAY G [ N ] 		
+
+(Number of elements)
+N -> C | ND
+
+(Type1)
+O -> BOOLEAN | CHAR | INTEGER | REAL | DOUBLE 
+
+(Pos)
+P -> E | G
+
+(Stmtlist)
+Q -> R | R ; Q			
+
+(Stmt)
+R -> T | Z 
+
+(Cmpdstmt)
+S -> BEGIN Q END
+
+(Simplstmt) 
+T -> U | Y
+
+(Assignstmt)   
+U -> G = V | G [ P ] = V
+
+(Expression)
+V -> V + W | V - W | W
+
+(Term)
+W -> W * X | W / X | W % X | X 
+
+(Factor)
+X -> ( V ) | G
+
+(Iostmt)
+Y -> READ ( G ) | WRITE ( G )
+
+(Structstmt) 
+Z -> S | A2 | B2 | C2
+
+(Ifstmt)
+A2 -> IF D2 THEN R | IF D2 THEN R ELSE R
+
+(Whilestmt) 
+B2 -> WHILE D2 DO R
+
+
+(Forstmt)
+C2 -> FOR U ; D2 ; V R
+
+(Condition)
+D2 -> V E2 V
+
+(RELATION)
+E2 -> < | <= | = | <> | >= | > | == 
+}

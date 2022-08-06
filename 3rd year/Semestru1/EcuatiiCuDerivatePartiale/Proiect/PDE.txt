@@ -1,0 +1,29 @@
+new paragraphs no indent
+newline command + enter twice
+never start with formula
+
+
+add quads \; or \,
+\quad = larger, tab-like space
+\noindent @end of the line \\ + 2xEnter
+add small spaces
+
+integral as straight not italic
+\def\intd#1{\mathinner{\mathrm{d}{#1}}}
+\def\dx{\intd{x}}
+\def\dxi{\intd{\xi}}
+
+
+$\intd{x}$ will create the dx
+
+-u_{xx}=\lambda u,\quad \text{in }\Omega=(0,1)
+
+
+
+\begin{array}{l}
+u_{t} = u_{xx},\quad \text{in }(0,\infty)\times\Omega \\[2ex]
+u_x(t,0)=u_x(t,1)=0,\quad \text{for all }t>0\\[2ex]
+u(0,x)=u_0(x)\geq 0,\quad \text{for all }x\in\Omega.%
+\end{array}
+
+Mind the [2ex] = more vertical space after line

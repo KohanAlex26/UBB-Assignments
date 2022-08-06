@@ -1,0 +1,10 @@
+Display:block
+div, section, article, canvas, form ,footer ,header, h1,...h6,li,ul,table
+
+
+Display:inline
+span,a,br,img,input,label,select,textarea
+
+
+
+HTML 5 - multimedia tags(audio,canvas,svg,video)

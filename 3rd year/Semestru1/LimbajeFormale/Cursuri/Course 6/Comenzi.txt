@@ -1,0 +1,4 @@
+win_flex sspascal_v2.lxi
+win_bison -d sspascal.y
+gcc lex.yy.c sspascal.tab.c -o rezultat
+./rezultat.exe<test.pas

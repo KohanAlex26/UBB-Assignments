@@ -1,0 +1,3 @@
+ecuatie elipsoid
+weighted mean value nu e definitie
+de ce simpson e mai bun ca trapezoidal

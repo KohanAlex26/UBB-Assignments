@@ -1,0 +1,114 @@
+G=(N,T,P,S)
+N={A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,A2,B2,C2,D2,E2}
+T={0,1,...,9,a,b,...,z,_,FOR,WHILE,IF,ELSE,{,},;,:,[,],INT,BOOL,CHAR,FLOAT,=,==,<=,>=,!=,+,-,*,/,%,(,),>,<}
+S={P}
+P={
+(String)
+A -> BA | B | ε
+
+(Char)
+B -> F | D | _ | ? | ! | .
+
+(Nonzero Digit)
+C -> 1 | 2 | ... | 9
+
+(Digit)
+D -> 0 | 1 | 2 | ... | 9
+
+(Integer)
+E -> C | 0 | ED
+
+(Letter)
+F -> a | b | ... | z
+
+(IDENTIFIER WITHOUT _)
+G -> F | FG | GD
+
+(Program)
+H -> S
+
+(Decllist)
+I -> J | J ; I			
+
+(Declaration)
+J -> L G		
+
+(ArraySelect)
+K -> G [ P ]		
+
+(Type)
+L -> O | M			
+
+(Arraydecl) 
+M -> List < O > G [ N ] 		
+
+(Number of elements)
+N -> C | ND
+
+(Type1)
+O -> BOOL | CHAR | INT | FLOAT 
+
+(Pos)
+P -> E | G
+
+(Stmtlist)
+Q -> R | R ; Q			
+
+(Stmt)
+R -> T | Z 
+
+(Cmpdstmt)
+S -> { Q }
+
+(Simplstmt) 
+T -> U | Y
+
+(Assignstmt)   
+U -> G = V | G [ P ] = V
+
+(Expression)
+V -> V + W | V - W | W
+
+(Term)
+W -> W * X | W / X | W % X | X 
+
+(Factor)
+X -> ( V ) | G
+
+(Iostmt)
+Y -> READ ( G ) | WRITE ( G )
+
+(Structstmt) 
+Z -> S | A2 | B2 | C2
+
+(Ifstmt)
+A2 -> IF ( D2 ) R | IF ( D2 ) R ELSE R
+
+(Whilestmt) 
+B2 -> WHILE ( D2 ) R
+
+(Forstmt)
+C2 -> FOR ( U ; D2 ; U ) R
+
+(Condition)
+D2 -> V E2 V
+
+(RELATION)
+E2 -> < | <= | = | != | >= | > | == 
+
+(IDENTIFIER WITH _)
+F2 -> _G
+}
+
+
+
+
+
+
+
+Documentation context free gramar:
+<nonterminals>
+<terminals> 
+<start symbol>
+<syntactical rules> 
+ 

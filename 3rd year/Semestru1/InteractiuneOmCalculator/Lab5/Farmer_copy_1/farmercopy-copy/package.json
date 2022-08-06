@@ -1,0 +1,9 @@
+{
+    "name": "farmercopy-copy",
+    "main": "main.js",
+    "window": {
+        "width": 480,
+        "height": 360,
+        "icon": "icon.png"
+    }
+}

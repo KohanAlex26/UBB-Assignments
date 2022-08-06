@@ -1,0 +1,31 @@
+.formStyle {
+    color: #ecede8;
+    background-color: rgba(0, 0, 0, 0.39); /*delete if no like transparent*/
+    font-size: 10px;
+    font-family: "Comic Sans MS";
+    position: fixed;
+    top: 9%;
+    left: 32vw;
+    right: 30vw;
+    padding-bottom: 1vh;
+    padding-left:1vw;
+    padding-right: 1vw;
+}
+.inputStyleR {
+    width: 100%;
+    padding-right: 5vw;
+    border-radius: 0%;
+    font-size: 35px;
+}
+.dropdown{
+    width: 116%;
+    padding-right: 1vw;
+    border-radius: 0%;
+    font-size: 35px;
+}
+#Form-lable {
+    font-size: 3em;
+    margin-bottom: 2em;
+    position: fixed;
+    display: block;
+}

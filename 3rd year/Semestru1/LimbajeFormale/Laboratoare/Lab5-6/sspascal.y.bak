@@ -1,0 +1,238 @@
+%{
+#include <stdio.h>
+#include <stdlib.h>
+#define YYDEBUG 1
+
+#define TIP_INT 1
+#define TIP_REAL 2
+#define TIP_CAR 3
+#define TIP_BOOL 4
+
+double stiva[20];
+int sp;
+
+void push(double x)
+{ stiva[sp++]=x; }
+
+double pop()
+{ return stiva[--sp]; }
+
+%}
+
+%union {
+  	int l_val;
+	char *p_val;
+}
+
+%token LIST
+
+%token CONST
+%token ELSE
+%token IF
+%token WRITE
+%token PROGRAM
+%token READ
+%token THEN
+%token VAR
+%token WHILE
+%token FOR
+
+%token ID
+%token <p_val> CONST_INT
+%token <p_val> CONST_REAL
+%token <p_val> CONST_CAR
+%token <p_val> CONST_BOOL
+%token CONST_SIR
+
+
+%token CHAR
+%token INTEGER
+%token REAL
+%token BOOLEAN
+
+%token ATRIB
+%token NE
+%token LE
+%token GE
+%token EQ
+
+%left '+' '-'
+%left DIV MOD '*' '/'
+%left OR
+%left AND
+%left NOT
+
+%type <l_val> expr_stat factor_stat constanta
+%%
+prog_sursa:	bloc 					{printf("%d\n",0);}
+		;
+bloc:		instr_comp 				{printf("%d\n",1);}
+		;
+
+decl_const:	{sp=0;} expr_stat ID  ';'	{
+		printf("*** %d %g ***\n", $2, pop());
+					}
+		;
+decl_var:	tip ID ';'				{printf("%d\n",2);}
+		|   LIST '<'tip'>' ID ';'		{printf("%d\n",3);}
+		|	tip ID ATRIB expresie ';'	{printf("%d\n",4);}
+		|	tip ID ATRIB CONST_SIR ';'	{printf("%d\n",5);}
+		;
+
+tip:		tip_simplu				{printf("%d\n",6);}
+		;
+tip_simplu:	INTEGER					{printf("%d\n",7);}
+		| REAL					{printf("%d\n",8);}
+		| CHAR					{printf("%d\n",9);}
+		| BOOLEAN				{printf("%d\n",10);}
+		;
+expr_stat:	factor_stat				{printf("%d\n",11);}
+		| expr_stat '+' expr_stat	{
+							printf("%d\n",12);
+			if($1==TIP_REAL || $3==TIP_REAL) $$=TIP_REAL;
+			else if($1==TIP_CAR) $$=TIP_CAR;
+				else $$=TIP_INT;
+			push(pop()+pop());
+						}
+		| expr_stat '-' expr_stat	{
+							printf("%d\n",13);
+			if($1==TIP_REAL || $3==TIP_REAL) $$=TIP_REAL;
+			else if($1==TIP_CAR) $$=TIP_CAR;
+				else $$=TIP_INT;
+			push(-pop()+pop());
+						}
+		| expr_stat '*' expr_stat	{
+							printf("%d\n",14);
+			if($1==TIP_REAL || $3==TIP_REAL) $$=TIP_REAL;
+			else if($1==TIP_CAR) $$=TIP_CAR;
+				else $$=TIP_INT;
+			push(pop()*pop());
+						}
+		| expr_stat '/' expr_stat		{printf("%d\n",15);}
+		| expr_stat DIV expr_stat		{printf("%d\n",16);}
+		| expr_stat MOD expr_stat		{printf("%d\n",17);}
+		;
+factor_stat:	ID					{printf("%d\n",18);}
+		| constanta				{printf("%d\n",19);}
+		| '(' expr_stat ')'			{printf("%d\n",20);$$ = $2;}
+		;
+constanta:	CONST_INT	{
+							printf("%d\n",21);
+			$$ = TIP_INT;
+			push(atof($1));
+				}
+		| CONST_REAL	{
+							printf("%d\n",22);
+			$$ = TIP_REAL;
+			push(atof($1));
+				}
+		| CONST_CAR	{
+							printf("%d\n",23);
+			$$ = TIP_CAR;
+			push((double)$1[0]);
+				}
+		| CONST_BOOL	{
+							printf("%d\n",1083);
+			$$ = TIP_BOOL;
+			push((double)$1[0]);
+				}
+		;
+instr_comp:	'{' lista_instr '}'			{printf("%d\n",24);}
+		;
+lista_instr:	instr					{printf("%d\n",25);}
+		| lista_instr ';' instr			{printf("%d\n",26);}
+		| lista_instr instr			{printf("%d\n",27);}
+		;
+instr:		/* empty */
+		| instr_atrib				{printf("%d\n",28);}
+		| instr_if				{printf("%d\n",29);}
+		| instr_while				{printf("%d\n",30);}
+		| instr_comp				{printf("%d\n",31);}
+		| instr_read				{printf("%d\n",32);}
+		| instr_print				{printf("%d\n",33);}
+		| instr_for				{printf("%d\n",34);}
+		| decl_var				{printf("%d\n",35);}
+		| decl_const				{printf("%d\n",36);}
+		;
+instr_atrib:	variabila ATRIB expresie		{printf("%d\n",37);}
+		;
+variabila:	ID					{printf("%d\n",38);}
+		| ID '[' expresie ']'			{printf("%d\n",39);}
+		| ID '.' ID				{printf("%d\n",40);}
+		;
+expresie:	factor					{printf("%d\n",41);}
+		| expresie '+' expresie			{printf("%d\n",42);}
+		| expresie '-' expresie			{printf("%d\n",43);}
+		| expresie '*' expresie			{printf("%d\n",44);}
+		| expresie '/' expresie			{printf("%d\n",45);}
+		| expresie DIV expresie			{printf("%d\n",46);}
+		| expresie MOD expresie			{printf("%d\n",47);}
+		;
+factor:		ID					{printf("%d\n",48);}
+		| constanta {}				{printf("%d\n",49);}
+		| ID '(' lista_expr ')'			{printf("%d\n",50);}
+		| '(' expresie ')'			{printf("%d\n",51);}
+		| ID '[' expresie ']'			{printf("%d\n",52);}
+		| ID '.' ID				{printf("%d\n",53);}
+		;
+lista_expr:	expresie				{printf("%d\n",54);}
+		| lista_expr ',' expresie		{printf("%d\n",55);}
+		;
+instr_if:	IF '(' conditie ')' instr ramura_else	{printf("%d\n",56);}
+		|	IF '(' conditie ')' instr	{printf("%d\n",57);}
+		;
+ramura_else:	/* empty */
+		ELSE instr				{printf("%d\n",58);}
+		;
+conditie:	expr_logica				{printf("%d\n",59);}
+		| expresie op_rel expresie		{printf("%d\n",60);}
+		;
+expr_logica:	factor_logic				{printf("%d\n",61);}
+		| expr_logica AND expr_logica		{printf("%d\n",62);}
+		| expr_logica OR expr_logica		{printf("%d\n",63);}
+		;
+factor_logic:	'(' conditie ')'			{printf("%d\n",64);}
+		| NOT factor_logic			{printf("%d\n",65);}
+		;
+op_rel:		'='					{printf("%d\n",66);}
+		| '<'					{printf("%d\n",67);}
+		| '>'					{printf("%d\n",68);}
+		| NE					{printf("%d\n",69);}
+		| LE					{printf("%d\n",70);}
+		| GE					{printf("%d\n",71);}
+		| EQ					{printf("%d\n",72);}
+		;
+instr_while:	WHILE '(' conditie ')' instr		{printf("%d\n",73);}
+		;
+instr_for:	FOR '(' instr_atrib ';' conditie ';' instr_atrib ')' instr	{printf("%d\n",74);}
+		;
+instr_print:	WRITE '(' lista_elem ')'		{printf("%d\n",75);}
+		;
+lista_elem:	element					{printf("%d\n",76);}
+		| lista_elem ',' element		{printf("%d\n",77);}
+		;
+element:	expresie				{printf("%d\n",78);}
+		| CONST_SIR				{printf("%d\n",79);}
+		;
+instr_read:	READ '(' lista_variab ')'		{printf("%d\n",80);}
+		;
+lista_variab:	variabila				{printf("%d\n",81);}
+		| lista_variab ',' variabila		{printf("%d\n",82);}
+		;
+
+%%
+
+yyerror(char *s)
+{
+  printf("%s\n", s);
+}
+
+extern FILE *yyin;
+
+main(int argc, char **argv)
+{
+  if(argc>1) yyin = fopen(argv[1], "r");
+  if((argc>2)&&(!strcmp(argv[2],"-d"))) yydebug = 1;
+  if(!yyparse()) fprintf(stderr,"Program syntactic correct.\n");
+}
+

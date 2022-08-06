@@ -1,0 +1,35 @@
+2 - Heat Equation, Brownian Motion Interpretation
+4 - Taylor formula, Heat Equation
+5 - Wave Equation
+7 - Solving PDEs
+9 - Convolution integral
+10 - The Transport Equation, Traveling waves
+11 - The nonhomogeneous Transport IVP
+12 - d'Alambert's Formula
+13 - Linear IVPs and the Fourier Transform
+15 - Lp spaces, dense in
+16 - Convolution product and the Fourier Transform
+17 - Fundamental properties of f
+18 - The F Aproach
+20 - Linear PDEs in bounded(spatial) domains, Initial Boundary Value Problem, Dirichlet Boundary Condition
+24 - Classical Dirichlet BVP
+25 - Divergence(Gauss-Ostrogradski), Green's Formula, Gauss
+26 - Riemann-Green Formula
+27 - Mean Value For Harmonic functions, The Strong Max Principle, The Weak Max Principle
+28 - Boundary Value, Dirichlet, Poisson Formula
+29 - The Dirichlet Principle
+30 - Courant's CounterExample
+31 - Weak(Generalized) solutions, Sobolev, Ho(omega)
+32 - Poincare Inequality, Dirichlet Principle, Existence & Uniqueness of a weak sol
+33 - Riesz
+34 - Wave, Damped Wave, Visco-elasticity, Visco-capillarity, Euler-Bernoulli Beam
+35 - Reaction Diffusion, Fisher KPP, Allen-Cahn, Fisher's model
+36 - Fisher's Eq
+37 - Travelling wave sols for fisher eq
+39 - Reaction diffusion Eq & systems, Allen-Cahn Eq, Brusselator system, GRDE, Equil
+40 - Lyaponov Theory
+41 - La Salle's Invariance Principle
+42 - Allen-Cahn Model, Newmann BC
+43 - Allen-Cahn Energy 
+45 - Turing instability, GRDS
+47 - Turing instability, with diffusion, without diffusion

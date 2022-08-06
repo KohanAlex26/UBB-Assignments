@@ -1,0 +1,42 @@
+.App-header-student {
+    width: 100%;
+    position: fixed;
+    padding: 5em;
+    color: #fff;
+    top: 0;
+    background-color: #003a63;
+    color: white;
+}
+.styled-table-exam-student {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 2.0em;
+    font-family: sans-serif;
+    min-width: 10em;
+    min-height: 0em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border-radius: 15px;
+    overflow: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#table-container-exam-student {
+    display:flex;
+    width: 100vw;
+    flex-direction: column;
+    column-gap: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    height: 800px;
+}
+
+.exam-table-head-student{
+    background: white;
+    position: sticky;
+    top: 0; /* Don't forget this, required for the stickiness */
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);}

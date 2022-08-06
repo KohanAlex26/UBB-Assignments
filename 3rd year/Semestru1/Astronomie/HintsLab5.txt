@@ -1,0 +1,14 @@
+h la -18 - h la apus
+unghi orar pt apus
+
+h=0grade pt apus
+h=-18grade cand soarele 18 grade sub orizont
+
+transformam in secunde si impartim la 0.997
+la sfarsit lasam in ore minute si secunde
+
+3ore si 19 pt 23.27
+1 ore si 48 pt -23.27
+
+apune-emisfera vestica
+rasare-emisfera estica

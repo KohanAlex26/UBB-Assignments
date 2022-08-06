@@ -1,0 +1,19 @@
+English:
+-Each image must have an alt attribute. Without alternative text, the content of an image will not be available to screen reader users or when the image is unavailable.
+-Some users, especially keyboard and screen reader users, often navigate by heading elements. An empty heading will present no information and may introduce confusion.
+-Adequate contrast of text is necessary for all users, especially users with low vision.
+-When navigating to a button, descriptive text must be presented to screen reader users to indicate the function of the button.
+-If a link contains no text, the function or purpose of the link will not be presented to the user. This can introduce confusion for keyboard and screen reader users.
+-Images that are the only thing within a link must have descriptive alternative text. If an image is within a link that contains no text and that image does not provide alternative text, a screen reader has no content to present to the user regarding the function of the link.
+
+
+
+
+
+
+Romana:
+-Poze fara alt uri. Screen readerul nu va putea citi continutul imaginii fara alt.
+-Formulare fara eticheta. Functia sau scopul acelui formular nu va fi prezentat utiliztatorilor de screen reader.
+-Antetele goale pot introduce confuzie celor care folosesc screen reader si celor care navigheaza pe tastatura dupa elemente de antet. Screen readerul stie ca un antet este prezent dar nu va citi nimic pentru ca este gol.
+-Butoanele goale nu indica functiile acelor butoane.
+-Link urile goale nu indica functia acelor link uri, userilor

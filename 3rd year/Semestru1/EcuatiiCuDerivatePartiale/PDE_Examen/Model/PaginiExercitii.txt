@@ -1,0 +1,10 @@
+1. pag 56 - Dirichelet/Weak Solution
+2. pag 17 - Fourier Transform
+3. pag 12 - Wave Eq/D'Alambert
+4. pag 10 - Transport Equation
+5. pag 56 - Boundary value
+6. pag 48 - Riemann-Green identity
+7. pag 74 - Reaction Diffusion
+8. pag 49 - Maximum Principle and minimum
+9. pag 77 - Newmann Equation
+10.pag 17 - Placherel 

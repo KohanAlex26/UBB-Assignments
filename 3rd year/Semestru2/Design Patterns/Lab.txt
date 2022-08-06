@@ -1,0 +1,1 @@
+1 creational, 2 structural, 2 behavioral - use during semester, doesn't matter when

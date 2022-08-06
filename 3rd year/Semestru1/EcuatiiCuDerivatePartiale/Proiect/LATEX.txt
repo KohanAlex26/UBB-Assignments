@@ -1,0 +1,292 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[spaces,hyphens]{url}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage[upint]{stix}
+\usepackage[a4paper,
+            bindingoffset=0.2in,
+            left=1.1in,
+            right=1.1in,
+            top=1in,
+            bottom=1in,]{geometry}
+            
+            
+            
+            
+\begin{document}
+
+
+
+
+
+\centering{\Large\textbf{Report}}
+\vspace{1.7cm}
+
+\centering{\Large{The Black-Scholes model}}
+
+\raggedright
+
+
+
+\vspace{0.7cm}
+
+\section{Introduction}
+The Black–Scholes or Black–Scholes–Merton model is a mathematical model for the dynamics of a financial market containing derivative investment instruments. 
+\\~\\
+From the partial differential equation in the model, the
+Black–Scholes equation, one can deduce the Black–Scholes formula, which gives
+a theoretical estimate of the price of European-style options and shows that
+the option has a unique price given the risk of the security and its expected
+return (instead replacing the security’s expected return with the risk-neutral
+rate)
+\\~\\
+Fischer Black and Myron Scholes, two economists, are credited with inventing the equation and model; Robert C. Merton, who first wrote an academic paper on the subject, is sometimes also credited.
+\\~\\
+The model's key idea is to hedge the option by buying and selling the underlying asset in just the right way and, as a consequence, to eliminate risk. This sort of hedging is known as "continuously revised delta hedging," and it is the foundation for more complex hedging tactics such as those engaged in by investment banks and hedge funds.
+\\~\\
+The model is widely used, although often with some adjustments, by options market participants. The assumptions of the model have been modified and generalized in various directions, resulting in a variety of models that are currently used in derivative pricing and risk management. 
+\\~\\
+Market players usually employ the model's insights, as demonstrated by the Black–Scholes formula, rather than the real prices.
+\\~\\
+No-arbitrage bounds and risk-neutral pricing are two of these insights (thanks to continuous revision). 
+Furthermore, when an explicit formula is unavailable, the Black–Scholes equation, a partial differential equation that governs the price of the option, allows pricing to be done using numerical methods.
+\\~\\
+Only one parameter in the Black–Scholes formula is not directly observable in the market: the average future volatility of the underlying asset, though it can be found from the price of other options.
+Since the option value (whether put or call) is increasing in this parameter, it can be inverted to produce what is known as a "volatility surface" that is then used to adjust other models, e.g. for Over-the-Counter derivatives.
+
+\newpage
+\section{Notations}
+In order to write the formula we need the following notations:
+\\~\\
+\textbf{General and market related:}\\
+\quad$t$ - time in years; we use $t=0$ for the present;\\
+\quad$r$ - the annualized risk-free interest rate, continuously compounded Also known as the force of interest;
+\\~\\
+\textbf{Asset related:}\\
+\quad$S(t)$ - the price of the underlying asset at time t, also denoted as $S_{t}$;\\
+\quad$\mu$ - the drift rate of $S$, annualized;\\
+\quad$\sigma$ - the standard deviation of the stock's returns; this is the square root of the quadratic variation of the stock's log price process, a measure of its volatility;
+\\~\\
+\textbf{Option related:}\\
+\quad$V(S,t)$ - the price of the option as a function of the underlying asset $S$\\
+\quad$C(S,t)$ - is the price of a European call option\\
+\quad$P(S,t)$ - the price of a European put option;\\
+\quad$T$ - time of option expiration;\\
+\quad$\tau$ - time until maturity, which is equal to $\tau =T-t$;\\
+\quad$K$ - the strike price of the option, also known as the exercise price.\\
+We will use $N(x)$ to denote the standard normal cumulative distribution function,\\
+
+$$
+N(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{x} e^{-z^{2} / 2} d z
+$$
+
+remark \(
+N(-x)=1-N(x)
+\)
+
+$N^{'}(x)$ will denote the standard normal probability density function,
+
+\[
+N^{\prime}(x)=\frac{d N(x)}{d x}=\frac{1}{\sqrt{2 \pi}} e^{-x^{2} / 2}
+\]
+
+\newpage
+\section{Black-Scholes Formula}
+The Black–Scholes formula calculates the price of European put and call options. This price is consistent with the Black–Scholes equation as above; this follows since the formula can be obtained by solving the equation for the corresponding terminal and boundary conditions:
+
+\vspace{0.5cm}
+
+\(
+\begin{array}{l}
+C(0, t)=0 \text { for all } t \\
+C(S, t) \rightarrow S \text { as } S \rightarrow \infty \\
+C(S, T)=\max \{S-K, 0\}
+\end{array}
+\)
+
+\vspace{0.5cm}
+
+The value of a call option for a non-dividend-paying underlying stock in terms of the Black-Scholes parameters is:
+$$
+\begin{aligned}
+C\left(S_{t}, t\right) &=N\left(d_{1}\right) S_{t}-N\left(d_{2}\right) K e^{-r(T-t)} \\
+d_{1} &=\frac{1}{\sigma \sqrt{T-t}}\left[\ln \left(\frac{S_{t}}{K}\right)+\left(r+\frac{\sigma^{2}}{2}\right)(T-t)\right] \\
+d_{2} &=d_{1}-\sigma \sqrt{T-t}
+\end{aligned}
+$$
+The price of a corresponding put option based on put-call parity with discount factor $e^{-r(T-t)}$ is:
+$$
+\begin{aligned}
+P\left(S_{t}, t\right) &=K e^{-r(T-t)}-S_{t}+C\left(S_{t}, t\right) \\
+&=N\left(-d_{2}\right) K e^{-r(T-t)}-N\left(-d_{1}\right) S_{t}
+\end{aligned}
+$$
+
+
+
+\vspace{1.0cm}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{img/Black-Scholes.png}
+
+\newpage
+\section{Proof}
+
+Black-Scholes Equation:\\
+
+$$
+\frac{\partial V}{\partial t}+\frac{1}{2} \sigma^{2} S^{2} \frac{\partial^{2} V}{\partial S^{2}}+r S \frac{\partial V}{\partial S}-r V=0
+$$
+\vspace{0.05cm}
+
+\(V (S, T) = f(S), 0 \leq S, V (0, t) = 0, \quad 0 \leq t \leq T .\)\\
+\vspace{0.2cm}
+If $V$ is the price of a call option, then the boundary condition $f(S) = max(S - E, 0)$, where $E$ denotes
+the strike price of the call option.\\
+\vspace{0.2cm}
+The following change of variables transforms the Black-Scholes boundary value problem into a standard
+boundary value problem for the heat equation.
+
+$$
+\begin{aligned}
+S &=e^{x},\quad t=T-\frac{2 \tau}{\sigma^{2}} \\
+V(S, t) &=v(x, \tau)=v\left(\ln (S), \frac{\sigma^{2}}{2}(T-t)\right) .
+\end{aligned}
+$$
+Computing the partial derivatives with respect to $S$ and $t$ and placing them in the Black-Scholes equation we get:
+$$
+\frac{\partial v}{\partial \tau}=\frac{\partial^{2} v}{\partial x^{2}}+\left(\frac{2 r}{\sigma^{2}}-1\right) \frac{\partial v}{\partial x}-\frac{2 r}{\sigma^{2}} v
+$$
+For \(
+\kappa=2 r / \sigma^{2} \text { and } t=\tau
+\) the Black-Scholes boundary value problem becomes\\
+
+$$
+\begin{aligned}
+\frac{\partial v}{\partial t} &=\frac{\partial^{2} v}{\partial x^{2}}+(\kappa-1) \frac{\partial v}{\partial x}-\kappa v, \quad -\infty<x<\infty, 0 \leq t \leq \frac{\sigma^{2}}{2} T \\
+v(x, 0) &=V\left(e^{x}, T\right)=f\left(e^{x}\right), \quad -\infty<x<\infty
+\end{aligned}
+$$
+\vspace{0.2cm}
+
+We set:\\
+\quad\(
+v(x, t)=e^{\alpha x+\beta t} u(x, t)=\phi u
+\)
+Computing the partials of $v$ in terms of $x$ and $t$ and placing them in $v$ we get:
+\[
+\begin{aligned}
+\alpha &=-\frac{1}{2}(k-1)=\frac{\sigma^{2}-2 r}{2 \sigma^{2}} \\
+\beta &=-\frac{1}{4}(k+1)^{2}=-\left(\frac{\sigma^{2}+2 r}{2 \sigma^{2}}\right)^{2} .
+\end{aligned}
+\]\\
+We have
+
+
+\begin{equation}
+\frac{\partial u}{\partial t} =\frac{\partial^{2} u}{\partial x^{2}}, \quad -\infty<x<\infty, 0 \leq t \leq \frac{\sigma^{2}}{2} T
+\end{equation}
+
+\begin{equation}
+u(x, 0) =e^{-\alpha x} v(x, 0)=e^{-\alpha x} f\left(e^{x}\right), \quad -\infty<x<\infty
+\end{equation}
+
+
+\vspace{0.2cm}
+
+
+If the option is a call option, with strike price $E$, then $f(x) = max(x - E, 0)$, and
+$$
+u(x, 0)=\epsilon^{-\alpha x} \max \left(e^{x}-E, 0\right)
+$$
+
+
+It can be shown that the solution to the heat equation (1) and initial condition (2) is given by the
+following integral
+
+$$
+u(x, t)=\frac{1}{\sqrt{4 \pi t}} \int_{-\infty}^{\infty} u(\xi, 0) e^{-\frac{(x-\xi)^{2}}{4 t}} d \xi
+$$
+
+Find the value of an option, whose value at expiration equals f(S), where
+\vspace{0.3cm}
+
+
+\(
+f(S)=\left\{\begin{array}{ll}
+0, & S<1 \\
+3, & 1 \leq S \leq 2 \\
+0, & S>3
+\end{array}\right.
+\)
+
+\vspace{0.2cm}
+
+$$
+\begin{aligned}
+V(S, 0) &=\nu\left(\ln S, \frac{\sigma^{2} T}{2}\right)=e^{\alpha \ln S} e^{\beta \frac{\sigma^{2} T}{2}} u\left(\ln S, \frac{\sigma^{2} T}{2}\right) \\
+&=e^{\alpha \ln S} e^{\beta \frac{\sigma^{2} T}{2}} \frac{1}{\sqrt{4 \pi \frac{\sigma^{2} T}{2}}} \int_{-\infty}^{\infty} u(\xi, 0) e^{-\frac{(\ln S-\xi)^{2}}{4 \frac{\sigma^{2} T}{2}}} d \xi \\
+&=e^{\alpha \ln S} e^{\beta \frac{\sigma^{2} T}{2}} \frac{1}{\sqrt{2 \pi \sigma^{2} T}} \int_{-\infty}^{\infty} e^{-\alpha \xi} f\left(e^{\xi}\right) e^{-\frac{(\ln S-\xi)^{2}}{2 \sigma^{2} T}} d \xi \\
+&=e^{\alpha \ln S} e^{\beta \frac{\sigma^{2} T}{2}} \frac{3}{\sqrt{2 \pi \sigma^{2} T}} \int_{0}^{\ln 2} e^{-\alpha \xi} e^{-\frac{(\ln S-\xi)^{2}}{2 \sigma^{2} T}} d \xi \\
+&=e^{\alpha \ln S} e^{\beta \frac{\sigma^{2} T}{2}} \frac{3 S^{-\alpha}}{\sqrt{2 \pi \sigma^{2} T}} e^{\frac{\alpha^{2} \sigma^{2} T}{2}} \int_{\lambda_{1}}^{\lambda_{2}} e^{-\lambda^{2} / 2} d \lambda \quad\left\{\begin{array}{l}
+\lambda_{1}=\frac{\ln (S / 2)+\left(r-\sigma^{2} / 2\right) T}{\sigma \sqrt{T}} \\
+\lambda_{2}=\frac{\ln S+\left(r-\sigma^{2} / 2\right) T}{\sigma \sqrt{T}}
+\end{array}\right.\\
+&=3 e^{-\frac{\sigma^{2}+8 r}{8} T}\left[N\left(\lambda_{2}\right)-N\left(\lambda_{1}\right)\right]
+\end{aligned}
+$$
+
+
+
+
+\newpage
+\section{Bitcoin Example}
+
+The second stock I tracked was Bitcoin USD (BTC-USD). The starting stock price was
+\$9,355.025 and I set the strike price to \$10,000. Over the time period of 180 days, the
+volatility was 36.87\% and an interest rate of 2.25\%:
+
+\vspace{0.1cm}
+
+$$
+\begin{array}{c}
+d_{1}=\frac{\ln \left(\frac{S}{K}\right)+\left(r+\frac{\sigma^{2}}{2}\right)(T-t)}{\sigma \sqrt{T-t}} \\
+d_{1}=\frac{\ln \left(\frac{9355.025}{10000}\right)+\left(0.0225+\frac{0.3687^{2}}{2}\right)\left(\frac{180}{365}\right)}{0.3687 \sqrt{\frac{180}{365}}} \\
+d_{1}=-0.0852 \\
+N\left(d_{1}\right)=N(-0.08)=0.4681 \\
+d_{2}=d_{1}-\sigma \sqrt{T-t} \\
+d_{2}=-0.0852-0.3687 \sqrt{\frac{180}{365}} \\
+d_{2}=-0.3441 \\
+N\left(d_{2}\right)=N(-0.34)=0.3669 \\
+C(S, t)=9255.025 *(0.4681)-10000 * e^{-0.0225\left(\frac{180}{365}\right)} *(0.3669) \\
+C(S, t)=\$ 750.58
+\end{array}
+$$
+
+\vspace{0.5cm}
+
+Since Bitcoin is a very volatile stock, the call price would be very large which connects to
+this example.
+
+
+
+\newpage
+\section{Conclusion}
+All the models were based on normal behaviour in the market, but there are two events who did not have a normal behaviour and will show us that the Black-Scholes model has its weaknesses. In the summer of 1997 across Thailand property prices collapsed. Banks went burst from Japan to Indonesia. These things were so improbable. They have never been included in any mathematical models. The solution was to bet in the opposite direction, but as the panic spread, the options began to cost even more.
+\\~\\
+Another impactful event was when the biggest country of the world refused to pay all its international debts and so all the calculations and models were hopeless. There was no way to balance the stock price and the option so the only solution was to start the calculations from the beginning.
+
+
+\newpage
+\section{References}
+\url{https://digitalcommons.liu.edu/cgi/viewcontent.cgi?article=1074&context=post_honors_theses&fbclid=IwAR0oKRnvzcyvN--eS6BL-_MGr1RSxx5RJg-EWaShIFa8mwqJ0Q5hbcoOVP8}
+\vspace{1cm}
+
+
+\url{https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model}
+\vspace{1cm}
+
+\url{https://www.dailymotion.com/video/x225si7}
+
+\end{document}
+

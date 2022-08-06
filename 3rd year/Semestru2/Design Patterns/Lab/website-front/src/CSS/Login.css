@@ -1,0 +1,88 @@
+.labelStyle {
+    margin-top: 2em;
+    color: #ecede8;
+    background-color: rgba(0, 0, 0, 0.39); /*delete if no like transparent*/
+    font-size: 10px;
+    font-family: "Comic Sans MS";
+    position: fixed;
+    top: 36%;
+    left: 28vw;
+    padding-bottom: 1vh;
+    padding-left:1vw;
+    padding-right: 1vw;
+}
+
+.buttonsLoginStyle {
+    border:0px;
+    margin-top:0.25em;
+    padding:4px;
+    padding-left:40px;
+    padding-right:40px;
+    text-decoration: none;
+    border-radius: 15%;
+    font-size: 30px;
+    color: white;
+    background-image: linear-gradient( 144deg, var(--negru-verzui) 5%, var(--lusien-deschis), var(--negru-verzui) 80%, var(--alb-verzui));
+}
+
+.buttonsLoginStyle2 {
+    border:0px;
+    margin-top:0.25em;
+    padding:4px;
+    border-radius: 15%;
+    text-decoration: none;
+    margin-left: 16em;
+    font-size: 30px;
+    color: white;
+    background-image: linear-gradient( 144deg, var(--negru-verzui) 5%, var(--lusien-deschis), var(--negru-verzui) 80%, var(--alb-verzui));
+}
+.termsStyle {
+    border-radius: 15%;
+    font-size: 25px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    color: white;
+    background-image: linear-gradient( 144deg, var(--negru-verzui) 5%, var(--lusien-deschis), var(--negru-verzui) 80%, var(--alb-verzui));
+}
+
+.contactStyle {
+    height:1.3em;
+    border-radius: 15%;
+    font-size: 25px;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+
+    background-image: linear-gradient( 144deg, var(--negru-verzui) 5%, var(--lusien-deschis), var(--negru-verzui) 80%, var(--alb-verzui));
+}
+
+.inputStyle {
+    width: 100%;
+    padding-right: 0vw;
+    border-radius: 0%;
+    font-size: 35px;
+}
+
+.newAccount{
+    top:25px;
+    right: 60px;
+    position: absolute;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+}
+.linkHome{
+    font-size: 10px;
+    color: #808080;
+}
+h6 {
+    margin-bottom: 2em;
+    font-size: 35px;
+}
+h7 {
+    margin-bottom: 2em;
+    font-size: 35px;
+}

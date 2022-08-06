@@ -1,0 +1,1 @@
+rm ST.txt FIP.txt lex.yy.c a.exe

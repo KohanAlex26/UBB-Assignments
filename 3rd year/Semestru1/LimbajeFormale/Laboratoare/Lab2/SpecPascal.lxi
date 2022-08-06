@@ -1,0 +1,123 @@
+%{
+
+#include "Utile.h"					
+
+%}
+
+%option noyywrap
+%option yylineno
+%option caseless
+
+LETTER		[A-Za-z]
+DIGIT_ZEC	[0-9]
+DIGIT_NZ    	[1-9] 
+ZERO        	[0]      
+IDENTIFIER	{LETTER}{LETTER}*{DIGIT_ZEC}*|{UNDERLINE}{LETTER}{LETTER}*{DIGIT_ZEC}*
+NR_BASE10	("+"|"-"){DIGIT_NZ}+{DIGIT_ZEC}*|{ZERO}|{DIGIT_NZ}+{DIGIT_ZEC}*
+NR_REAL		{NR_BASE10}"."{NR_BASE10}*					
+BOOLEAN		"true"|"false"							
+DELIMIT  	[;\.,:()[]\{\}]
+SIR_CAR		[\"][^\n]*({UNDERLINE}|{LETTER}|{DIGIT_ZEC})*[\"]			
+CARACTER	"'"[^\n]({UNDERLINE}|{LETTER}|{DIGIT_ZEC})"'"
+ERR_CIFRA_START [0-9]+[a-zA-Z0-9]*
+DOT             "\."
+COLON           "\:"
+SEMICOLON       "\;"								
+COMMA           "\,"
+UNDERLINE	"\_"
+
+%%
+
+\{		{addFIP(11,-1,fip);printf("%d\n", 11);}				
+\}		{addFIP(12,-1,fip);printf("%d\n", 12);}
+const		{addFIP(13,-1,fip);printf("%d\n", 13);}				
+do		{addFIP(14,-1,fip);printf("%d\n", 14);}
+else		{addFIP(15,-1,fip);printf("%d\n", 15);}
+if		{addFIP(17,-1,fip);printf("%d\n", 17);}
+
+
+write		{addFIP(18,-1,fip);printf("%d\n", 18);}				
+read		{addFIP(19,-1,fip);printf("%d\n", 19);}		
+while		{addFIP(23,-1,fip);printf("%d\n", 23);}
+for         	{addFIP(26,-1,fip);printf("%d\n", 26);}			
+"="        	{addFIP(200,-1,fip);printf("%d\n", 200);}			
+
+\( 		{addFIP(101,-1,fip);printf("%d\n", 101);}
+\)         	{addFIP(102,-1,fip);printf("%d\n", 102);}
+\;         	{addFIP(103,-1,fip);printf("%d\n", 103);}   
+\,         	{addFIP(104,-1,fip);printf("%d\n", 104);}
+\.         	{addFIP(105,-1,fip);printf("%d\n", 105);}
+\:         	{addFIP(106,-1,fip);printf("%d\n", 106);}    
+
+\+ 		{addFIP(300,-1,fip);printf("\%d\n", 300);}
+\-		{addFIP(301,-1,fip);printf("\%d\n", 301);}
+\* 		{addFIP(302,-1,fip);printf("\%d\n", 302);}			
+\/		{addFIP(303,-1,fip);printf("\%d\n", 303);}			
+\%		{addFIP(304,-1,fip);printf("\%d\n", 304);}			
+
+
+char		{addFIP(28,-1,fip);printf("%d\n", 28);}
+int		{addFIP(29,-1,fip);printf("%d\n", 29);}				
+float		{addFIP(30,-1,fip);printf("%d\n", 30);}				
+bool		{addFIP(31,-1,fip);printf("%d\n", 31);}				
+
+
+or		{addFIP(32,-1,fip);printf("%d\n", 32);}
+and		{addFIP(33,-1,fip);printf("%d\n", 33);}
+
+
+
+
+{BOOLEAN}	{addFIP2(1,yytext,yyleng,st,fip);addST(yytext,yyleng,st);printf("%d\n", 1);}
+{IDENTIFIER}	{addFIP2(1,yytext,yyleng,st,fip);addST(yytext,yyleng,st);printf("%d\n", 1);}
+{NR_BASE10}	{addFIP2(1,yytext,yyleng,st,fip);addST(yytext,yyleng,st);printf("%d\n", 1);}
+
+			
+				
+"'"[^\n]"'"	{addFIP(4,pozTS++,fip);printf("%d\n", 4);}		
+{SIR_CAR}	{addFIP2(1,yytext,yyleng,st,fip);printf("%d\n", 1);}
+{CARACTER}	{addFIP2(1,yytext,yyleng,st,fip);printf("%d\n", 1);}
+
+
+
+
+"<"          	{addFIP(400,-1,fip);printf("%d\n", 400);}
+">"          	{addFIP(401,-1,fip);printf("%d\n", 401);}
+"=="          	{addFIP(402,-1,fip);printf("%d\n", 402);}			
+"!="          	{addFIP(403,-1,fip);printf("%d\n", 403);}			
+"<="          	{addFIP(404,-1,fip);printf("%d\n", 404);}			
+">="          	{addFIP(405,-1,fip);printf("%d\n", 405);}			
+
+
+[ \t\n]+ {}
+(\+0|\-0) {printf("Lexical error - sign before zero %s at line %d \n", yytext, yylineno);}
+. printf("Eroare %s la linia %d\n", yytext, yylineno);
+[0-9]+[a-zA-Z]+[a-zA-Z0-9]* {printf("Lexical error - identifier starts with digit %s at line %d \n", yytext, yylineno);}
+
+
+
+%%
+void  yyerror(char *s)
+{
+  printf("%s\n", s);
+}
+
+
+extern FILE *yyin;
+
+
+
+
+int main(int argc, char **argv)
+{
+
+	++argv, --argc;
+	if (argc>0)
+   		yyin=fopen(argv[0],"r");
+   	yylex();
+        printFIP(fip);
+	printST(st);
+	return 0;
+}
+
+

@@ -1,0 +1,6 @@
+sa fie contrast potrivit
+sa fie descrieri pentru toate obiectele de pe ecran
+permite schimbarea dimensiunii fontului
+interactionare cu taste
+sa ne mutam de pe un control pe altul folosind tab intr o ordine logica
+confirmare actiune cu enter nu cu click sau dublu click

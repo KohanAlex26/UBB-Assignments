@@ -1,0 +1,11 @@
+-pixels-fixati, daca avem ecrane mai mici cum ar fi telefoanele nu o sa se vada ok
+-em-e flexibil si scalabil si e convertit in pixeli. daca font size ul e de 16px, 1em=16 pixels. e relativ la elementul pe care e folosit
+-rem e ca si em doar ca e relativ la root
+-vh si vw e relativ la viewport size
+
+
+-px for border widths, box shadows, etc.
+-em for font sizes
+-vw/vh is sometimes used for layout stuff
+-rem for margins and padding
+-ch I tend to use for things like paragraph text widths or sizing containers that will hold monospace fonts.
